@@ -1,8 +1,10 @@
+@import './modules/variable.scss';
 @import './modules/util/mixin.scss';
 @import './modules/util/placeholder.scss';
 @import './modules/classes.scss';
-@import './modules/variable.scss';
+
 @import './modules/reset.scss';
+
 @import './modules/content/header.scss';
 @import './modules/content/main.scss';
 @import './modules/content/footer.scss';

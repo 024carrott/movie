@@ -1,0 +1,41 @@
+/*
+  device size
+    - mobile
+    - tablet
+    - desktop
+*/
+$device-desktop-size: 1200px;
+$device-tablet-size: 768px;
+$device-mobile-size: 478px;
+
+/*
+  font
+    - size
+    - color
+    - familiy
+*/
+$default-font-size: 10px;
+$default-font-color: #202020;
+$font-color1: #fff;
+$font-color2: #ff0079;
+$font-color3: #BBBCC4;
+$font-color4: #80818a;
+$font-color5: #494C62;
+
+/*
+  background
+    - color
+*/
+$background-default-color: #fff;
+$background-transparent-color: transparent;
+$background-color1: #ff0079;
+
+/*
+  padding 
+*/
+$wrapper-padding: 20px;
+
+/*
+  margin
+*/
+$list-margin: 15px;
