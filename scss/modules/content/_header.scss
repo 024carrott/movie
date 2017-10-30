@@ -1,0 +1,71 @@
+header {
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  background-color: rgba(0,0,0,0.2);
+  text-shadow: 1px 1px  1px #999;
+  
+  h2 {
+    float: left;
+    a {
+      color: $font-color1;      
+    }
+  }
+  span {
+    float: right;    
+    color: $font-color1;
+  }
+}
+
+@include desktop {
+  header {
+    .wrapper {
+      padding: $wrapper-padding $wrapper-padding + 60;
+      h2 {
+        a {
+          font-size: 1.5rem;
+          
+        } 
+      }
+      span {
+        font-size: 1.5rem;
+        font-weight: bold; 
+      }
+    }
+  }
+}
+
+@include tablet {
+  header {
+    .wrapper {
+      padding: $wrapper-padding + 1 $wrapper-padding + 20;
+      h2 {
+        a {
+          font-size: 1.3rem;
+        } 
+      }
+      span {
+        font-size: 1.3rem;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+@include mobile {
+  header {
+    .wrapper {
+      padding: $wrapper-padding + 2 $wrapper-padding;
+      h2 {
+        a {
+          font-size: 1.2rem;
+        } 
+      }
+      span {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
