@@ -1,2 +1,41 @@
+/*
+  device size
+    - mobile
+    - tablet
+    - desktop
+*/
+/*
+  font
+    - size
+    - color
+    - familiy
+*/
+/*
+  background
+    - color
+*/
+/*
+  padding 
+*/
+/*
+  margin
+*/
+.a11y-hidden {
+  overflow: hidden;
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  clip: rect(0, 0, 0, 0);
+  clip: rect(0 0 0 0);
+}
+
+.wrapper-padding-side {
+  padding: 0 20px;
+}
+
+.list-margin-right {
+  margin-right: 15px;
+}
 
 /*# sourceMappingURL=stylesheets.css.map */

@@ -3,15 +3,15 @@
 	"file": "stylesheets.css",
 	"sources": [
 		"../scss/stylesheets.scss",
-		"../scss/modules/util/mixin.scss",
-		"../scss/modules/util/placeholder.scss",
-		"../scss/modules/classes.scss",
-		"../scss/modules/variable.scss",
-		"../scss/modules/reset.scss",
-		"../scss/modules/content/header.scss",
-		"../scss/modules/content/main.scss",
-		"../scss/modules/content/footer.scss"
+		"../scss/modules/_variable.scss",
+		"../scss/modules/util/_mixin.scss",
+		"../scss/modules/util/_placeholder.scss",
+		"../scss/modules/_classes.scss",
+		"../scss/modules/_reset.scss",
+		"../scss/modules/content/_header.scss",
+		"../scss/modules/content/_main.scss",
+		"../scss/modules/content/_footer.scss"
 	],
 	"names": [],
-	"mappings": ""
+	"mappings": "ACAA;;;;;EAKE;AAKF;;;;;EAKE;AASF;;;EAGE;AAKF;;EAEE;AAGF;;EAEE;AG7BF,ADVA,YCUY,CDVC;EACX,QAAQ,EAAE,MAAM;EAChB,QAAQ,EAAE,QAAQ;EAClB,MAAM,EAAE,GAAG;EACX,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,IAAI;EACZ,IAAI,EAAE,gBAAgB;EACtB,IAAI,EAAE,aAAa;CACpB;;ACPD,AAAA,qBAAqB,CAAC;EACpB,OAAO,EAAE,CAAC,CHiCM,IAAI;CGhCrB;;AACD,AAAA,kBAAkB,CAAC;EACjB,YAAY,EHmCA,IAAI;CGlCjB"
 }
