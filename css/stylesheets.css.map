@@ -1,0 +1,17 @@
+{
+	"version": 3,
+	"file": "stylesheets.css",
+	"sources": [
+		"../scss/stylesheets.scss",
+		"../scss/modules/util/mixin.scss",
+		"../scss/modules/util/placeholder.scss",
+		"../scss/modules/classes.scss",
+		"../scss/modules/variable.scss",
+		"../scss/modules/reset.scss",
+		"../scss/modules/content/header.scss",
+		"../scss/modules/content/main.scss",
+		"../scss/modules/content/footer.scss"
+	],
+	"names": [],
+	"mappings": ""
+}
