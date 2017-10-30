@@ -1,0 +1,13 @@
+// padding
+.wrapper-padding-side {
+  padding: 0 $wrapper-padding;
+}
+.list-margin-right {
+  margin-right: $list-margin;
+}
+
+// a11y-hidden
+
+.a11y-hidden {
+  @extend %a11y-hidden;
+}

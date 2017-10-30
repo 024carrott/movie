@@ -1,0 +1,47 @@
+// 반응형 Media query
+// desktop
+@mixin desktop {
+  @media screen and (min-width: $device-desktop-size) {
+    @content;
+  }
+}
+// tablet
+@mixin tablet {
+  @media screen and (min-width: $device-tablet-size) and (max-width: ($device-desktop-size - 1)) {
+    @content;
+  }
+}
+// mobile
+@mixin mobile {
+  @media screen and (max-width: $device-mobile-size) {
+    @content;
+  }
+}
+
+// breakPoint
+@mixin breakPoint($min: 0, $max: 0) {
+
+  @if( $max == 0 ) {
+    @media screen and (min-width: $min) {
+      @content;
+    }
+  } @else if( $min == 0 ) {
+    @media screen and (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @media screen and (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  }
+}
+// Float clearFix
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+// Float 
