@@ -1,0 +1,16 @@
+.section-movie-list {
+  ul {
+    @include clearfix;
+    li {
+      float: left;
+    }
+  }
+
+  .movie-list-loading {
+    display: block;
+    text-align: center;
+    .fa {
+      font-size: 45px;
+    }
+  }
+}

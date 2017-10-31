@@ -1,0 +1,40 @@
+.movie-category {
+  // padding: 20px 0 10px 0;
+  position: relative;
+  button {
+    &.active,
+    &:hover {
+      color: $font-color2;
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background: $background-color1;
+        width: 100%;
+        height: 1px;
+      }
+    }
+  }
+  & > ul {
+    
+    @include clearfix;
+    & > li {
+      float: left;
+      margin-right: 15px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  .sub-category {
+    position: absolute;
+    // display: none;
+    top: 110%;
+    left: 0;
+    @include clearfix;
+    & > li {
+      float: left;
+    }
+  }
+}

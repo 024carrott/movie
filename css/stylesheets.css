@@ -88,4 +88,227 @@ table {
   border-spacing: 0;
 }
 
+.main-banner {
+  background: url("../assets/wrath-of-the-titans.jpg") no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.main-banner-inner {
+  padding-top: 300px;
+  padding-bottom: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.main-banner-content h4 {
+  margin-bottom: 10px;
+  font-size: 32px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.main-banner-content p {
+  font-size: 12px;
+  color: #BBBCC4;
+}
+
+.main-banner-content p span {
+  margin-right: 15px;
+}
+
+.main-banner-rating {
+  padding: 7px 12px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid #494C62;
+  border-radius: 4px;
+}
+
+.main-banner-rating p {
+  margin-bottom: 10px;
+  font-size: 10px;
+  color: #80818a;
+}
+
+.main-banner-rating p span {
+  font-size: 14px;
+  color: #fff;
+}
+
+.main-banner-rating ul::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.main-banner-rating ul li {
+  float: left;
+}
+
+.main-banner-rating ul i {
+  color: #ff0079;
+}
+
+@media screen and (min-width: 1200px) {
+  .main-banner-inner::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  .main-banner-inner .main-banner-content {
+    float: left;
+  }
+  .main-banner-inner .main-banner-rating {
+    float: right;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .main-banner-inner::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  .main-banner-inner .main-banner-content {
+    float: left;
+  }
+  .main-banner-inner .main-banner-rating {
+    float: right;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main-banner-rating {
+    display: inline-block;
+    margin-top: 20px;
+  }
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-category {
+  border-bottom: 1px solid #BBBCC4;
+}
+
+.section-category::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.section-category button {
+  padding: 15px 10px;
+  position: relative;
+  background: #fff;
+  border: none;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.section-category .movie-category {
+  float: left;
+}
+
+.section-category .movie-list-change {
+  float: right;
+}
+
+.section-movie-list {
+  padding: 20px 0;
+}
+
+.movie-category {
+  position: relative;
+}
+
+.movie-category button.active, .movie-category button:hover {
+  color: #ff0079;
+}
+
+.movie-category button.active::after, .movie-category button:hover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: #ff0079;
+  width: 100%;
+  height: 1px;
+}
+
+.movie-category > ul::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.movie-category > ul > li {
+  float: left;
+  margin-right: 15px;
+}
+
+.movie-category > ul > li:last-child {
+  margin-right: 0;
+}
+
+.movie-category .sub-category {
+  position: absolute;
+  top: 110%;
+  left: 0;
+}
+
+.movie-category .sub-category::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.movie-category .sub-category > li {
+  float: left;
+}
+
+.movie-list-change ul::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.movie-list-change ul li {
+  float: left;
+}
+
+.movie-list-change ul button {
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+
+.movie-list-change ul button i {
+  line-height: 24px;
+}
+
+.movie-list-change ul button.active, .movie-list-change ul button:hover {
+  color: #ff0079;
+}
+
+.section-movie-list ul::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.section-movie-list ul li {
+  float: left;
+}
+
+.section-movie-list .movie-list-loading {
+  display: block;
+  text-align: center;
+}
+
+.section-movie-list .movie-list-loading .fa {
+  font-size: 45px;
+}
+
 /*# sourceMappingURL=stylesheets.css.map */

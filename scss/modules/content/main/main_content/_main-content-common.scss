@@ -1,0 +1,31 @@
+.main-content {
+  
+  max-width: 1200px;
+  margin: 0 auto;
+
+}
+
+.section-category {
+  @include clearfix;
+  border-bottom: 1px solid $font-color3;
+  button {
+    padding: 15px 10px;
+    position: relative;
+    background: #fff;
+    border: none;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+  .movie-category {
+    float: left;
+  }
+  .movie-list-change {
+    float: right;
+  }
+
+}
+
+.section-movie-list {
+  padding: 20px 0;
+  
+}
