@@ -92,6 +92,26 @@ a {
   text-decoration: none;
 }
 
+body {
+  position: relative;
+}
+
+.skip {
+  position: absolute;
+  padding-left: calc((100% - 100px ) / 2);
+  top: -30px;
+}
+
+.skip a {
+  display: inline-block;
+  z-index: 100;
+  width: 100px;
+  padding: 2px 0;
+  color: #fff;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
 header {
   position: fixed;
   width: 100%;
@@ -149,6 +169,71 @@ header span {
   header .wrapper span {
     font-size: 1.2rem;
     font-weight: bold;
+  }
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  height: 60px;
+  width: 100%;
+  background-color: #ededed;
+}
+
+footer .wrapper .footer {
+  color: #999;
+}
+
+footer .wrapper .footer p {
+  display: inline-block;
+}
+
+footer .wrapper .footer i {
+  position: relative;
+  margin-left: 10px;
+  color: #999;
+}
+
+@media screen and (min-width: 1200px) {
+  footer .wrapper {
+    width: 530px;
+    margin: 10px auto 0;
+  }
+  footer .wrapper .footer p {
+    font-size: 1.2rem;
+  }
+  footer .wrapper .footer i {
+    font-size: 2rem;
+    top: 5px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  footer .wrapper {
+    width: 450px;
+    margin: 10px auto 0;
+  }
+  footer .wrapper .footer p {
+    font-size: 1rem;
+  }
+  footer .wrapper .footer i {
+    font-size: 1.8rem;
+    top: 5px;
+  }
+}
+
+@media screen and (max-width: 478px) {
+  footer .wrapper {
+    width: 310px;
+    margin: 18px auto 0;
+  }
+  footer .wrapper .footer p {
+    font-size: 0.7rem;
+  }
+  footer .wrapper .footer i {
+    font-size: 1.2rem;
+    top: 5px;
+    margin-left: 5px;
   }
 }
 
