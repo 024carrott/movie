@@ -1,10 +1,17 @@
 (function(global, Movie){
   'use strict';
 
+  // DOM ul과 loading 부분
   var target = null, loading = null;
+  // 이벤트가 발생할 때마다 render하는걸 막기위해서 flag를 사용
   var render_flag = false;
+  // 영화 category정보를 받는 변수.
   var category = 'trending';
 
+  /**
+   * @func init
+   * @description 초기화시켜주는 함수.
+   */
   function init() {
     target = document.querySelector('.section-movie-list > ul');
     loading = document.querySelector('.movie-list-loading');
@@ -13,7 +20,10 @@
     bind();
   }
 
-
+  /**
+   * @func bind
+   * @description 이벤트들의 모음.
+   */
   function bind() {
     window.addEventListener('scroll', function() {
       var scrollTop = getScrollTop(),
@@ -33,22 +43,32 @@
     });
   }
 
+  /**
+   * @func getScrollTop
+   * @description 현재 스크롤의 Y축 정보를 받아오는 함수.
+   */
   function getScrollTop() {
     return  (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
   }
+  /**
+   * @func startLoading
+   * @description Loading DOM 객체의 display 스타일을 block으로 설정해주는 함수.
+   */
   function startLoading() {
     loading.style.display = 'block';
   }
+  /**
+   * @func stopLoading
+   * @description Loading DOM 객체의 display 스타일을 none으로 설정해주는 함수.
+   */
   function stopLoading() {
     loading.style.display = 'none';
   }
-
+  /**
+   * @func setRenderList
+   * @description Movie에서 영화정보를 받은 다음 DOM객체를 생성시켜 rendering 시켜주는 함수.
+   */
   function setRenderList() {
-
-    // if(render_flag) {
-    //   console.log('로딩중입니다.');
-    //   return;
-    // }
 
     render_flag = true;
     startLoading();
@@ -69,7 +89,10 @@
       }
     }, 2000);
   }
-
+  /**
+   * @func render
+   * @description 영화 리스트에 필요한 객체를 생성하고 movie정보들을 넣어 target에 append 시켜주는 함수.
+   */
   function render(data) {
     /*
       li
