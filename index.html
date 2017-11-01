@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css/stylesheets.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
   <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
   <title>The Movie Box</title>
@@ -27,6 +30,125 @@
     </div>
   </header>
   <!-- e: header -->
+  <!-- s:main -->
+  <main>
+    <h2 class="a11y-hidden">메인 영역</h1>
+    <div class="main-inner">
+      <!-- s:main-banner -->
+      <div class="main-banner">
+        <h3 class="a11y-hidden">배너 영역</h3>
+        <div class="main-banner-inner wrapper-padding-side">
+          <!-- s: main-banner-content -->
+          <div class="main-banner-content">
+            <h4>wrath of the titans</h4>
+            <p>
+              <span>Fantasy</span>
+              <span>Animation</span>
+              <span>Family |</span>
+              <span>Duration 1h 52m</span>
+            </p>
+          </div>
+          <!-- e: main-banner-content -->
+          <!-- s: main-banner-rating -->
+          <div class="main-banner-rating">
+            <p>
+              <span>Rating</span>
+              based on 3.546 reviews
+            </p>
+            <div>
+              <ul>
+                <li>
+                  <i class="material-icons">&#xE838;</i>
+                </li>
+                <li>
+                  <i class="material-icons">&#xE838;</i>
+                </li>
+                <li>
+                  <i class="material-icons">&#xE838;</i>
+                </li>
+                <li>
+                  <i class="material-icons">&#xE839;</i>
+                </li>
+                <li>
+                  <i class="material-icons">&#xE83A;</i>
+                </li>
+              </ul>
+            </div>
+            <!-- e: main-banner-rating -->
+          </div>
+        </div>
+      </div>
+      <!-- e:main-banner -->
+      <!-- s:main-content -->
+      <div class="main-content">
+        <div class="main-content-inner wrapper-padding-side">
+          <!-- s: category -->
+          <section class="section-category">
+            <h3 class="a11y-hidden">영화 카테고리 리스트</h3>
+            <!-- s:movie-list-change -->
+            <div class="movie-list-change">
+              <ul>
+                <li>
+                  <button type="button" class="btn-list-change module">
+                    <i class="material-icons">&#xE8F0;</i>
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="btn-list-change list">
+                    <i class="material-icons">&#xE8EF;</i>
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <!-- e:movie-list-change -->
+            <!-- s:movie-category -->
+            <div class="movie-category">
+              <ul>
+                <li>
+                  <button type="button">Trending</button>
+                </li>
+                <li>
+                  <button type="button">Top Rated</button>
+                </li>
+                <li>
+                  <button type="button">New Arrivals</button>
+                </li>
+                <li>
+                  <button type="button">Genre</button>
+                  <ul class="sub-category">
+                    <li>
+                      <button type="button">Horror</button>
+                    </li>
+                    <li>
+                      <button type="button">Animation</button>
+                    </li>
+                    <li>
+                      <button type="button">Animation</button>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <!-- e:movie-category -->
+          </section>
+          <!-- e: category -->
+          <!-- s: movie-list -->
+          <section class="section-movie-list">
+            <ul>
+              
+            </ul>
+            <div class="movie-list-loading">
+              <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+              <span class="sr-only">Loading...</span>
+            </div>
+          </section>
+          <!-- e: movie-list -->
+        </div>
+      </div>
+      <!-- e:main-content -->
+    </div>
+  </main>
+  <!-- e:main -->
   <footer>
     <div class="wrapper">
       <div class="footer">
@@ -37,10 +159,9 @@
     </div>
   </footer>
 
-
-
-  
-  <script src="js/jquery.min.js"></script>
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/movie.js"></script>
+  <script src="./js/movie_list.js"></script>
   <script src="js/skip-link.js"></script>
 </body>
 </html>

@@ -1,0 +1,82 @@
+.main-banner {
+  background: url('../assets/wrath-of-the-titans.jpg') no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.main-banner-inner {
+  padding-top: 300px;
+  padding-bottom: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+.main-banner-content {
+  h4 {
+    margin-bottom: 10px;
+    font-size: 32px;
+    text-transform: uppercase;
+    color: $font-color1;
+  }
+  p {
+    font-size: 12px;
+    color: $font-color3;
+    span {
+      margin-right: 15px;
+    }
+  }
+}
+.main-banner-rating {
+  padding: 7px 12px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid $font-color5;
+  border-radius: 4px;
+  p {
+    margin-bottom: 10px;
+    font-size: 10px;
+    color: $font-color4;
+    span {
+      font-size: 14px;
+      color: $font-color1;
+    }
+  }
+  ul {
+    @include clearfix;
+    li {
+      float: left;
+    }
+    i {
+      color: $font-color2;
+    }
+  }
+}
+
+@include desktop {
+  .main-banner-inner {
+    @include clearfix;
+    .main-banner-content {
+      float: left;
+    }
+    .main-banner-rating {
+      float: right;
+    }
+  }
+}
+@include tablet {
+  .main-banner-inner {
+    @include clearfix;
+    .main-banner-content {
+      float: left;
+    }
+    .main-banner-rating {
+      float: right;
+    }
+  }
+}
+@include mobile {
+  .main-banner-rating {
+    display: inline-block;
+    margin-top: 20px;
+  }
+}
