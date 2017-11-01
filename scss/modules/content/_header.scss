@@ -1,0 +1,101 @@
+// s: 건너뛰기 링크
+body {
+  position: relative;
+}
+.skip {
+  position: absolute;
+  padding-left: calc((100% - 100px ) / 2);
+  top: -30px;
+  // opacity: 0;
+  a {
+    display: inline-block;
+    z-index: 100;
+    width: 100px;
+    padding: 2px 0;
+    color: $font-color1;
+    text-align: center;
+    background-color: rgba(0,0,0,0.4);
+  }
+}
+// e: 건너뛰기 링크 (필요한 기능인가?)
+
+// s: header 공통
+header {
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  background-color: rgba(0,0,0,0.2);
+  text-shadow: 1px 1px  1px #999;
+  
+  h2 {
+    float: left;
+    a {
+      color: $font-color1;      
+    }
+  }
+  button {
+    float: right;
+    padding: 5px;
+    margin-top: -5px;
+    border: 0;
+    background-color: rgba(0,0,0,0);
+
+    i {
+      color: $font-color1;
+    }
+  }
+}
+// e: header 공통
+
+@include desktop {
+  header {
+    .wrapper {
+      padding: $wrapper-padding $wrapper-padding + 60;
+      h2 {
+        a {
+          font-size: 1.5rem;
+          
+        } 
+      }
+      i {
+        font-size: 1.5rem;
+        font-weight: bold; 
+      }
+    }
+  }
+}
+
+@include tablet {
+  header {
+    .wrapper {
+      padding: $wrapper-padding + 1 $wrapper-padding + 20;
+      h2 {
+        a {
+          font-size: 1.3rem;
+        } 
+      }
+      i {
+        font-size: 1.3rem;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+@include mobile {
+  header {
+    .wrapper {
+      padding: $wrapper-padding + 2 $wrapper-padding;
+      h2 {
+        a {
+          font-size: 1.2rem;
+        } 
+      }
+      i {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+    }
+  }
+}
+

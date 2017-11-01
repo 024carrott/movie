@@ -8,13 +8,29 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
   rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
   <title>The Movie Box</title>
 </head>
 <body>
-
-
+  <!-- s: 본문 바로가기 링크 -->
+  <div class="skip">
+    <a href="#content">본문 바로가기</a>
+  </div>
+  <!-- e: 본문 바로가기 링크 -->
+  <!-- s: header -->
+  <header>
+    <div class="wrapper">
+      <h2><a href="#">THEMOVIEBOX</a></h2>
+      <div class="search-btn">
+        <button type="button">
+          <i class="lnr lnr-magnifier"><span class="a11y-hidden"> 검색 </span></i>
+        </button>
+      </div>
+    </div>
+  </header>
+  <!-- e: header -->
   <!-- s:main -->
-  
   <main>
     <h2 class="a11y-hidden">메인 영역</h1>
     <div class="main-inner">
@@ -133,10 +149,19 @@
     </div>
   </main>
   <!-- e:main -->
+  <footer>
+    <div class="wrapper">
+      <div class="footer">
+        <p>copyright &copy; 2017. All rights reserved by Uchang, Jina</p>
+        <a href="https://github.com/uchang7194"><i class="devicon-github-plain"></i></a>
+        <a href="https://github.com/024carrott"><i class="devicon-github-plain"></i></a>
+      </div>
+    </div>
+  </footer>
 
-  
   <script src="./js/jquery.min.js"></script>
   <script src="./js/movie.js"></script>
   <script src="./js/movie_list.js"></script>
+  <script src="js/skip-link.js"></script>
 </body>
 </html>
