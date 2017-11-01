@@ -128,8 +128,15 @@ header h2 a {
   color: #fff;
 }
 
-header span {
+header button {
   float: right;
+  padding: 5px;
+  margin-top: -5px;
+  border: 0;
+  background-color: transparent;
+}
+
+header button i {
   color: #fff;
 }
 
@@ -140,7 +147,7 @@ header span {
   header .wrapper h2 a {
     font-size: 1.5rem;
   }
-  header .wrapper span {
+  header .wrapper i {
     font-size: 1.5rem;
     font-weight: bold;
   }
@@ -153,7 +160,7 @@ header span {
   header .wrapper h2 a {
     font-size: 1.3rem;
   }
-  header .wrapper span {
+  header .wrapper i {
     font-size: 1.3rem;
     font-weight: bold;
   }
@@ -166,7 +173,7 @@ header span {
   header .wrapper h2 a {
     font-size: 1.2rem;
   }
-  header .wrapper span {
+  header .wrapper i {
     font-size: 1.2rem;
     font-weight: bold;
   }

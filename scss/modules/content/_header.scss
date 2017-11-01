@@ -33,9 +33,16 @@ header {
       color: $font-color1;      
     }
   }
-  span {
-    float: right;    
-    color: $font-color1;
+  button {
+    float: right;
+    padding: 5px;
+    margin-top: -5px;
+    border: 0;
+    background-color: rgba(0,0,0,0);
+
+    i {
+      color: $font-color1;
+    }
   }
 }
 // e: header 공통
@@ -50,7 +57,7 @@ header {
           
         } 
       }
-      span {
+      i {
         font-size: 1.5rem;
         font-weight: bold; 
       }
@@ -67,7 +74,7 @@ header {
           font-size: 1.3rem;
         } 
       }
-      span {
+      i {
         font-size: 1.3rem;
         font-weight: bold;
       }
@@ -84,7 +91,7 @@ header {
           font-size: 1.2rem;
         } 
       }
-      span {
+      i {
         font-size: 1.2rem;
         font-weight: bold;
       }
