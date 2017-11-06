@@ -163,7 +163,7 @@
         alert('데이터를 불러 올 수 없습니다.');
         return;
       }
-      console.log('movie_list movies: ', movies);
+      // console.log('movie_list movies: ', movies);
       for(var i = limit * call_count, len = movies.length; i < len; i++) {
         var movie = movies[i];
         console.log('movie_list movie: ', movie);
@@ -224,6 +224,7 @@
     rating.innerText = (data.rating / 2).toFixed(1);
     
     var genres = '';
+
     if ( data.genres ) {
       for(var i = 0, len = data.genres.length; i < len; i++) {
         genres += data.genres[i] + ' ';

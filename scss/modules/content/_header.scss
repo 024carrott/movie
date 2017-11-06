@@ -21,6 +21,7 @@ body {
 
 // s: header 공통
 header {
+  @include clearfix;
   position: fixed;
   top: 0;
   left: 0;
@@ -36,15 +37,18 @@ header {
       color: $font-color1;      
     }
   }
-  button {
+  label {
     float: right;
     padding: 5px;
-    margin-top: -5px;
     border: 0;
     background-color: rgba(0,0,0,0);
 
+
     i {
       color: $font-color1;
+      margin-top: -10px;
+      margin-left: 5px;
+      display: inline-block;
     }
   }
 
@@ -53,30 +57,31 @@ header {
 
   // 수정 필요
   input {
-    // position: relative;
     float: right;
     width: 150px;
     height: 20px;
+    margin-top: -7px;
+    padding: 5px 7px;
+    border: 1px solid $font-color1;
     background-color: rgba(0,0,0,0);
     color: #fff;
     // opacity: 0;
   }
   
   .search-list {
+    float: right;
+    position: absolute;
+    right: 70px;
+    top: 60px;
     width: 200px;
     background-color: rgba(99, 111, 133, 0.651);
     color: $font-color1;
-    position: absolute;
-    float: right;
-    // padding: 10px;
-    right: 70px;
-    top: 60px;
     font-weight: normal;
-    text-shadow: none;
-    li {
-      padding: 10px;
-    }
-    
+    text-shadow: none;  
+  }
+  .search-item {
+    display: block;
+    padding: 10px;
   }
   
   // 수정 필요
@@ -95,7 +100,7 @@ header {
         } 
       }
       i {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         font-weight: bold; 
       }
     }
@@ -112,7 +117,7 @@ header {
         } 
       }
       i {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         font-weight: bold;
       }
     }
@@ -129,8 +134,12 @@ header {
         } 
       }
       i {
-        font-size: 1.2rem;
+        font-size: 1rem;
         font-weight: bold;
+
+      }
+      input {
+        width: 100px;
       }
     }
   }
