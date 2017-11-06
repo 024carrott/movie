@@ -31,7 +31,6 @@
     var URLs = {
       top_rated: '&sort_by=rating&order_by=desc',
       new_arrivals: '&sort_by=year&order_by=asc',
-<<<<<<< HEAD
       horror: '&genre=horror',
       animation: '&genre=animation',
       drama: '&genre=drama',
@@ -41,13 +40,6 @@
       adventure: '&genre=adventure',
       fantasy: '&genre=fantasy',
       action: '&genre=action'
-    }
-=======
-      genre: {
-        horror: '&genre=horror',
-        animation: '&genre=animation',
-        drama: '&genre=drama',
-      }
     };
     // 검색 url
     var search_url = 'https://yts.ag/api/v2/list_movies.json?query_term=';
@@ -55,7 +47,6 @@
     var search_data = [];
     // var url_result = '';
     // var search_value = document.querySelector('.header-search-bar').value;
->>>>>>> bfdc73fde5de9da07ba37cdee8a0f31ce00db920
 
    
     
@@ -225,16 +216,12 @@
       getMovieData: getMovieData,
       resetMovieData: resetMovieData,
       getPage: getPage,
-<<<<<<< HEAD
       getPrevPage: getPrevPage,
-      getCallCount: getCallCount
-=======
       getCallCount: getCallCount,
       loadSearchData: loadSearchData,
       getSearchData: getSearchData,
       getSearchUrl: getSearchUrl
       // inputEvent: inputEvent
->>>>>>> bfdc73fde5de9da07ba37cdee8a0f31ce00db920
     };
   };
   
