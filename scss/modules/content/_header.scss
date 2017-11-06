@@ -2,21 +2,21 @@
 body {
   position: relative;
 }
-.skip {
-  position: absolute;
-  padding-left: calc((100% - 100px ) / 2);
-  top: -30px;
-  // opacity: 0;
-  a {
-    display: inline-block;
-    z-index: 100;
-    width: 100px;
-    padding: 2px 0;
-    color: $font-color1;
-    text-align: center;
-    background-color: rgba(0,0,0,0.4);
-  }
-}
+// .skip {
+//   position: absolute;
+//   padding-left: calc((100% - 100px ) / 2);
+//   top: -30px;
+//   // opacity: 0;
+//   a {
+//     display: inline-block;
+//     z-index: 100;
+//     width: 100px;
+//     padding: 2px 0;
+//     color: $font-color1;
+//     text-align: center;
+//     background-color: rgba(0,0,0,0.4);
+//   }
+// }
 // e: 건너뛰기 링크 (필요한 기능인가?)
 
 // s: header 공통

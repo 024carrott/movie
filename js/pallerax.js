@@ -11,7 +11,7 @@
     main_content = document.querySelector('.main-content');
 
     var banner_height = parseInt(getStyleObject(banner).height);
-    main_content.style.top = banner_height + 'px';
+    main_content.style.marginTop = banner_height + 'px';
     
     bind();
   }

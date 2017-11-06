@@ -8,6 +8,7 @@
 		"../scss/modules/util/_placeholder.scss",
 		"../scss/modules/_classes.scss",
 		"../scss/modules/_reset.scss",
+		"../scss/modules/content/_skip-link.scss",
 		"../scss/modules/content/_header.scss",
 		"../scss/modules/content/main/_main.scss",
 		"../scss/modules/content/main/_main-banner.scss",

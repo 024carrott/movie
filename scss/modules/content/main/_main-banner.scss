@@ -79,6 +79,10 @@
   }
 }
 @include mobile {
+  .main-banner-inner {
+    padding-top: 250px;
+    padding-bottom: 80px;
+  }
   .main-banner-rating {
     display: inline-block;
     margin-top: 20px;

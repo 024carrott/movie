@@ -3,7 +3,8 @@
   // position: relative;
   button {
     &.active,
-    &:hover {
+    &:hover,
+    &:focus {
       color: $font-color2;
       &::after {
         content: '';
@@ -15,6 +16,7 @@
         height: 1px;
       }
     }
+
   }
   & > ul {
     

@@ -15,13 +15,15 @@
 <body>
   <!-- s: 본문 바로가기 링크 -->
   <div class="skip">
-    <a href="#content">본문 바로가기</a>
+    <h2 class="a11y-hidden">바로가기 영역</h2>
+    <a class="skip-content" href="#content">본문 바로가기</a>
+    <a class="skip-movie-category" href="#category">카테고리 바로가기</a>
   </div>
   <!-- e: 본문 바로가기 링크 -->
   <!-- s: header -->
   <header>
     <div class="wrapper">
-      <h2><a href="#" class="logo">THEMOVIEBOX</a></h2>
+      <h2><a href="#" class="logo">THE MOVIE BOX</a></h2>
       <div class="search-wrap">
         <label class="header-search-btn" for="search">
           <i class="lnr lnr-magnifier"><span class="a11y-hidden"> 검색 </span></i>
@@ -36,7 +38,7 @@
   </header>
   <!-- e: header -->
   <!-- s:main -->
-  <main>
+  <main id="content">
     <h2 class="a11y-hidden">메인 영역</h2>
     <div class="main-inner">
       <!-- s:main-banner -->
@@ -44,7 +46,7 @@
         <h3 class="a11y-hidden">배너 영역</h3>
         <div class="main-banner-inner wrapper-padding-side">
           <!-- s: main-banner-content -->
-          <div class="main-banner-content">
+          <div class="main-banner-content" tabindex="0">
             <h4>wrath of the titans</h4>
             <p>
               <span>Fantasy</span>
@@ -55,7 +57,7 @@
           </div>
           <!-- e: main-banner-content -->
           <!-- s: main-banner-rating -->
-          <div class="main-banner-rating">
+          <div class="main-banner-rating" tabindex="0">
             <p>
               <span>Rating</span>
               based on 3.546 reviews
@@ -88,24 +90,8 @@
       <div class="main-content">
         <div class="main-content-inner wrapper-padding-side">
           <!-- s: category -->
-          <section class="section-category">
+          <section class="section-category" id="category">
             <h3 class="a11y-hidden">영화 카테고리 리스트</h3>
-            <!-- s:movie-list-change -->
-            <div class="movie-list-change">
-              <ul>
-                <li>
-                  <button type="button" class="btn-list-change module">
-                    <i class="material-icons">&#xE8F0;</i>
-                  </button>
-                </li>
-                <li>
-                  <button type="button" class="btn-list-change list">
-                    <i class="material-icons">&#xE8EF;</i>
-                  </button>
-                </li>
-              </ul>
-            </div>
-            <!-- e:movie-list-change -->
             <!-- s:movie-category -->
             <div class="movie-category">
               <ul>
@@ -119,7 +105,8 @@
                   <button type="button" class="category_btn" data-category="new_arrivals">New Arrivals</button>
                 </li>
                 <li>
-                  <button type="button" class="category_btn" data-category="genre">Genre</button>
+                  <button type="button" class="category_btn" data-category="genre" aria-describedby="genre-category-discription">Genre</button>
+                  <span class="a11y-hidden" id="genre-category-discription">엔터 혹은 마우스로 클릭하면 서브메뉴를 활성화시킬 수 있습니다.</span>
                   <ul class="sub-category">
                     <li>
                       <button type="button" class="category_btn" data-category="horror">Horror</button>
@@ -131,25 +118,43 @@
                       <button type="button" class="category_btn" data-category="drama">Drama</button>
                     </li>
                     <li>
-                      <button type="button" class="category_btn" data-category="thriller">thriller</button>
+                      <button type="button" class="category_btn" data-category="thriller">Thriller</button>
                     </li>
                     <li>
-                      <button type="button" class="category_btn" data-category="comedy">comedy</button>
+                      <button type="button" class="category_btn" data-category="comedy">Comedy</button>
                     </li>
                     <li>
-                      <button type="button" class="category_btn" data-category="adventure">adventure</button>
+                      <button type="button" class="category_btn" data-category="adventure">Adventure</button>
                     </li>
                     <li>
-                      <button type="button" class="category_btn" data-category="fantasy">fantasy</button>
+                      <button type="button" class="category_btn" data-category="fantasy">Fantasy</button>
                     </li>
                     <li>
-                      <button type="button" class="category_btn" data-category="action">action</button>
+                      <button type="button" class="category_btn" data-category="action">Action</button>
                     </li>
                   </ul>
                 </li>
               </ul>
             </div>
             <!-- e:movie-category -->
+            <!-- s:movie-list-change -->
+            <div class="movie-list-change">
+              <ul>
+                <li>
+                  <button type="button" class="btn-list-change module" aria-describedby="movie-list-module">
+                    <span class="a11y-hidden" id="movie-list-module">모듈 형식으로 보기</span>
+                    <i class="material-icons">&#xE8F0;</i>
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="btn-list-change list" aria-describedby="movie-list-list">
+                    <span class="a11y-hidden" id="movie-list-list">리스트 형식으로 보기</span>
+                    <i class="material-icons">&#xE8EF;</i>
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <!-- e:movie-list-change -->
           </section>
           <!-- e: category -->
           <!-- s: movie-list -->
@@ -170,13 +175,8 @@
     <div class="modal none">
       <button type="button" class="modal-close-btn">X</button>
       <figure class="modal-poster">
-        <!-- <img src="../MOVIE/KakaoTalk_Photo_2017-10-25-11-12-07.jpeg" alt=""> -->
-      
+    
         <figcaption class="modal-contents">
-          <!-- <h4 class="modal-title">WRATH OF THE TITANS</h4> -->
-          <!-- <span class="modal-year">2017</span> -->
-          <!-- <span class="modal-genre">djlsfjm, dlkjlsfjm, djlsjfs</span> -->
-          <!-- <p class="modal-summary">gjkaljewgkljalkdfsjs jl;h alj ewldsgjal; jalh;j lj ls;gjfewal; jaljrqwl jawjakw gakwhc kaehbkw3 r husifhcxkjakjhrkalkhrl</p> -->
         </figcaption>
       </figure>
     </div>

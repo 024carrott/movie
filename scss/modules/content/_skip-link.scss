@@ -1,0 +1,32 @@
+.skip {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000;
+  
+  a {
+    display: block;
+    position: relative;
+    top: 0;
+    left: -9999px;
+    padding: 8px 12px;
+    background: #000;
+    color: #fff;
+  }
+
+  .skip-content,
+  .skip-movie-category {
+    &:hover,
+    &:focus {
+      left: 0;
+    }
+  }
+  // a {
+  //   text-indent: -9999px;
+  //   &:focus {
+  //     text-indent: 0;
+  //   }
+  // }
+
+}

@@ -40,7 +40,9 @@
       adventure: '&genre=adventure',
       fantasy: '&genre=fantasy',
       action: '&genre=action'
+
     };
+
     // 검색 url
     var search_url = 'https://yts.ag/api/v2/list_movies.json?query_term=';
     // search data 를 담을 배열 변수
