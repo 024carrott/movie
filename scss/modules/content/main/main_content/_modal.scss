@@ -1,0 +1,151 @@
+.modal {
+  position: fixed;
+  z-index: 100;
+  background-color: #181818;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  // display: none;
+}
+.modal-close-btn {
+  float: right;
+  border: none;
+  background-color: #181818;
+  color: #fff;
+}
+.modal-contents {
+  float: left;
+  
+  span {
+    display: block;
+  }
+}
+.modal-title {
+}
+.modal-year {
+  color: hsl(0, 0%, 87%);
+}
+.modal-genre {
+  color: hsl(0, 0%, 63%);
+}
+.modal-summary {
+  color: hsl(0, 0%, 72%);
+}
+
+@include desktop {
+  .modal {
+    padding: $wrapper-padding;
+    width: 700px;
+  }
+  .modal-close-btn {
+    font-size: 1.4rem;
+  }
+  .modal-poster {
+    float: left;
+  }
+  .modal-contents {
+    width: 400px;
+    margin-left: 30px;
+    
+    span {
+      margin-top: 16px;
+    }
+  }
+  .modal-title {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-top: 16px;
+  }
+  .modal-genre {
+    font-size: 1rem;
+  }
+  .modal-summary {
+    margin: 50px 0;
+    font-size: 1rem;
+    line-height: 1.4rem;
+  }
+}
+
+
+@include tablet {
+  .modal {
+    padding: $wrapper-padding;
+    width: 560px;
+  }
+  .modal-close-btn {
+    font-size: 1.4rem;
+  }
+  .modal-poster {
+    float: left;
+    img {
+      width: 200px;
+    }
+  }
+  .modal-contents {
+    float: right;
+    width: 300px;
+    margin-left: 30px;
+    
+    span {
+      margin-top: 16px;
+    }
+  }
+  .modal-title {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-top: 16px;
+  }
+  .modal-genre {
+    font-size: 1rem;
+  }
+  .modal-summary {
+    margin: 50px 0;
+    font-size: 1rem;
+    line-height: 1.4rem;
+  }
+}
+
+@include mobile {
+  .modal {
+    padding: 10px $wrapper-padding;
+    width: 250px;
+  }
+  .modal-close-btn {
+    font-size: 1.4rem;
+  }
+  .modal-poster {
+    margin-top: 40px;
+    img {
+      width: 250px;
+      height: 300px;
+    }
+  }
+  .modal-contents {
+    width: 240px;
+    
+    span {
+      margin-top: 12px;
+    }
+  }
+  .modal-title {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-top: 12px;
+  }
+  .modal-year {
+  }
+  .modal-genre {
+    font-size: 1rem;
+  }
+  .modal-summary {
+    margin: 30px 0;
+    font-size: 1rem;
+    line-height: 1.4rem;
+  }
+}
+
+.none {
+  display: none;
+}
+
