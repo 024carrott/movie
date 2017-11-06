@@ -29,8 +29,18 @@
         animation: '&genre=animation',
         drama: '&genre=drama',
       }
-    }
+    };
+    // 검색 url
+    var search_url = 'https://yts.ag/api/v2/list_movies.json?query_term=';
+    // search data 를 담을 배열 변수
+    var search_data = [];
+    // var url_result = '';
+    // var search_value = document.querySelector('.header-search-bar').value;
 
+   
+    
+
+  
     /**
      * @func getPage
      * @description page의 값을 반환하는 함수.
@@ -117,15 +127,56 @@
       loadMovies(new_url);
     }
 
+    //  검색
+
+    // data load 하는 함수 
+    function loadSearchData(search_url) {
+      // inputEvent();
+      // url_result = search_url + search_value;
+      console.log('url:', search_url);
+      $.ajax({
+        url: search_url,
+        success: function(response) {
+          if(response.status === 'ok') {
+            console.log(response);
+            search_data = response.data.movies;
+            console.log('search_data:', search_data);
+          } 
+        }
+      })
+    }
+   
+    
+    function getSearchData() {
+      return search_data;
+    }
+    function getSearchUrl() {
+      return search_url;
+    }
+    
+    // 입력값 감지하는 이벤트    
+    // function inputEvent(){
+    //   window.search.addEventListener('keypress', function(e){
+    //     url_result = search_url + value;
+    //     console.log(url_result);
+    //   })
+    // }
+
+
     return {
       setMovieData: setMovieData,
       getMovieData: getMovieData,
       resetMovieData: resetMovieData,
       getPage: getPage,
-      getCallCount: getCallCount
+      getCallCount: getCallCount,
+      loadSearchData: loadSearchData,
+      getSearchData: getSearchData,
+      getSearchUrl: getSearchUrl
+      // inputEvent: inputEvent
     };
   };
-
+  
   global.Movie = Movie();
 
 }(window, window.jQuery));
+
