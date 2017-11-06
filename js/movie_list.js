@@ -23,6 +23,9 @@
     bind();
   }
   /**
+   * @func setFooter
+   */ 
+  /**
    * @func bind
    * @description 이벤트들의 모음.
    */
@@ -164,7 +167,7 @@
       for(var i = limit * call_count, len = movies.length; i < len; i++) {
         var movie = movies[i];
         console.log('movie_list movie: ', movie);
-        render(movie);
+        render(movie, i);
       }
 
       // target의 parent의 높이를 설정
@@ -175,7 +178,7 @@
    * @func render
    * @description 영화 리스트에 필요한 객체를 생성하고 movie정보들을 넣어 target에 append 시켜주는 함수.
    */
-  function render(data) {
+  function render(data, index) {
     /*
       li
         figure
@@ -204,8 +207,8 @@
 
     // setAttribute & setData 
     // attr
-
     list_img_box.setAttribute('class', 'list-img-box');
+    img.setAttribute('tabindex', 0);
     figcaption.setAttribute('class', 'movie-info');
     movie_info_wrapper1.setAttribute('class', 'movie-info-wrapper1');
     movie_info_wrapper2.setAttribute('class', 'movie-info-wrapper2');
@@ -215,14 +218,12 @@
     rating.setAttribute('class', 'rating');
     
     // setData
-
-    img.setAttribute('src', data.medium_cover_image);
+    
     year.innerText = data.year;
     h4.innerText = data.title;
     rating.innerText = (data.rating / 2).toFixed(1);
     
     var genres = '';
-    console.log('movie_list render data.genres:', data.genres);
     if ( data.genres ) {
       for(var i = 0, len = data.genres.length; i < len; i++) {
         genres += data.genres[i] + ' ';
@@ -232,6 +233,9 @@
     }
     p.innerText = genres;
 
+    img.setAttribute('src', data.medium_cover_image);
+    img.setAttribute('alt', 
+        '제목 ' + data.title + ' 개봉연도 ' + data.year + ' 장르 ' + genres + ' 평점 ' + (data.rating / 2).toFixed(1));
     // append Elements
 
     movie_info_wrapper1.appendChild(h4);
