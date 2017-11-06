@@ -13,7 +13,7 @@
 
   function bind() {
     // var section_movie_list = document.querySelector('.section-movie-list'),
-        search_list = document.querySelector('.search_list_result');
+    // search_list = document.querySelector('.search_list_result');
 
     // console.log('movie-list:', section_movie_list);
         
@@ -38,7 +38,7 @@
 
    
       
-      render(data);
+      // render(data);
     }, 2000);  
   }
   function render(data) {
