@@ -1,4 +1,8 @@
 .main-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   background: url('../assets/wrath-of-the-titans.jpg') no-repeat;
   background-size: cover;
   background-position: 50% 50%;
@@ -11,7 +15,7 @@
   margin: 0 auto;
 }
 
-
+ 
 .main-banner-content {
   h4 {
     margin-bottom: 10px;
@@ -21,7 +25,7 @@
   }
   p {
     font-size: 12px;
-    color: $font-color3;
+    color: $font-color1;
     span {
       margin-right: 15px;
     }

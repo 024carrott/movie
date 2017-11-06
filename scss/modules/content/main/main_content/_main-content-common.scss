@@ -1,17 +1,27 @@
+main {
+  background: $background-color2;
+}
+
 .main-content {
+  position: relative;
   
+  background: $background-color2;
+  z-index: 50;
+}
+.main-content-inner {
   max-width: 1200px;
   margin: 0 auto;
-
 }
 
 .section-category {
+  position: relative;
+  z-index: 100;
   @include clearfix;
   border-bottom: 1px solid $font-color3;
   button {
     padding: 15px 10px;
     position: relative;
-    background: #fff;
+    background: $background-transparent-color;
     border: none;
     box-sizing: border-box;
     cursor: pointer;

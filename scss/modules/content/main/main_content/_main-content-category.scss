@@ -1,6 +1,6 @@
 .movie-category {
   // padding: 20px 0 10px 0;
-  position: relative;
+  // position: relative;
   button {
     &.active,
     &:hover {
@@ -29,12 +29,18 @@
   }
   .sub-category {
     position: absolute;
-    // display: none;
-    top: 110%;
+    display: none;
+    background: $background-color2;
+    width: 100%;
+    top: calc(100% + 1px);
     left: 0;
     @include clearfix;
     & > li {
       float: left;
+    }
+
+    &.active {
+      display: block;
     }
   }
 }

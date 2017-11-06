@@ -166,7 +166,7 @@ header button i {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   header .wrapper {
     padding: 22px 20px;
   }
@@ -180,6 +180,10 @@ header button i {
 }
 
 .main-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   background: url("../assets/wrath-of-the-titans.jpg") no-repeat;
   background-size: cover;
   background-position: 50% 50%;
@@ -201,7 +205,7 @@ header button i {
 
 .main-banner-content p {
   font-size: 12px;
-  color: #BBBCC4;
+  color: #fff;
 }
 
 .main-banner-content p span {
@@ -268,19 +272,31 @@ header button i {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .main-banner-rating {
     display: inline-block;
     margin-top: 20px;
   }
 }
 
+main {
+  background: #f8f8f8;
+}
+
 .main-content {
+  position: relative;
+  background: #f8f8f8;
+  z-index: 50;
+}
+
+.main-content-inner {
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .section-category {
+  position: relative;
+  z-index: 100;
   border-bottom: 1px solid #BBBCC4;
 }
 
@@ -293,7 +309,7 @@ header button i {
 .section-category button {
   padding: 15px 10px;
   position: relative;
-  background: #fff;
+  background: transparent;
   border: none;
   box-sizing: border-box;
   cursor: pointer;
@@ -309,10 +325,6 @@ header button i {
 
 .section-movie-list {
   padding: 20px 0;
-}
-
-.movie-category {
-  position: relative;
 }
 
 .movie-category button.active, .movie-category button:hover {
@@ -346,7 +358,10 @@ header button i {
 
 .movie-category .sub-category {
   position: absolute;
-  top: 110%;
+  display: none;
+  background: #f8f8f8;
+  width: 100%;
+  top: calc(100% + 1px);
   left: 0;
 }
 
@@ -358,6 +373,10 @@ header button i {
 
 .movie-category .sub-category > li {
   float: left;
+}
+
+.movie-category .sub-category.active {
+  display: block;
 }
 
 .movie-list-change ul::after {
@@ -383,6 +402,10 @@ header button i {
   color: #ff0079;
 }
 
+.section-movie-list {
+  margin-top: 35px;
+}
+
 .section-movie-list ul::after {
   content: '';
   display: block;
@@ -390,16 +413,210 @@ header button i {
 }
 
 .section-movie-list ul li {
+  box-sizing: border-box;
   float: left;
+}
+
+.section-movie-list ul figure {
+  cursor: pointer;
+}
+
+.section-movie-list .list-img-box {
+  position: relative;
+}
+
+.section-movie-list .list-img-box img {
+  width: 100%;
+  height: auto;
+}
+
+.section-movie-list .movie-info {
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.section-movie-list .movie-info::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.section-movie-list .movie-info > * {
+  float: left;
+}
+
+.section-movie-list .movie-info .movie-info-wrapper1 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  overflow: hidden;
+  color: #BBBCC4;
+}
+
+.section-movie-list .movie-info .title {
+  color: #494C62;
+}
+
+.section-movie-list .movie-info .genre {
+  color: #BBBCC4;
+}
+
+.section-movie-list .movie-info .rating {
+  display: inline-block;
+  padding: 3px 5px;
+  border: 1px solid #ff0079;
+  border-radius: 4px;
+  color: #ff0079;
 }
 
 .section-movie-list .movie-list-loading {
   display: block;
+  height: 150px;
+  line-height: 150px;
   text-align: center;
 }
 
 .section-movie-list .movie-list-loading .fa {
   font-size: 45px;
+}
+
+.section-movie-list.module .list-img-box .year {
+  position: absolute;
+  left: 10px;
+  bottom: 15px;
+  padding: 5px 7px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid #BBBCC4;
+  border-radius: 4px;
+  color: #BBBCC4;
+}
+
+.section-movie-list.module .movie-info .movie-info-wrapper1 {
+  width: 80%;
+}
+
+.section-movie-list.module .movie-info .movie-info-wrapper2 {
+  width: 20%;
+  text-align: right;
+}
+
+.section-movie-list.module .movie-info .title {
+  margin-bottom: 5px;
+}
+
+.section-movie-list.module .movie-info .rating, .section-movie-list.module .movie-info .title {
+  margin-top: 7px;
+}
+
+.section-movie-list.list figure {
+  position: relative;
+}
+
+.section-movie-list.list .list-img-box {
+  width: 18%;
+}
+
+.section-movie-list.list .list-img-box .year {
+  display: none;
+}
+
+.section-movie-list.list .movie-info {
+  position: absolute;
+  top: 0;
+  left: 18%;
+  width: 82%;
+  height: 100%;
+}
+
+.section-movie-list.list .movie-info .movie-info-wrapper1 {
+  position: relative;
+  width: 80%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.section-movie-list.list .movie-info .movie-info-wrapper2 {
+  position: relative;
+  width: 20%;
+  height: 100%;
+  text-align: center;
+}
+
+.section-movie-list.list .movie-info .movie-info-wrapper2 .rating {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 767px) {
+  .section-movie-list.module li {
+    width: 100%;
+    padding: 10px 15px;
+  }
+  .section-movie-list.list li {
+    width: 100%;
+    padding: 10px 0;
+  }
+  .section-movie-list.list figcaption {
+    padding: 10px 15px;
+  }
+  .section-movie-list.list .movie-info .movie-info-wrapper1 .title {
+    margin-bottom: 15px;
+  }
+  .section-movie-list figcaption {
+    padding: 20px 15px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .section-movie-list.module li {
+    width: calc(100% / 2);
+    padding: 10px 20px;
+  }
+  .section-movie-list.list li {
+    width: 100%;
+    padding: 10px 50px;
+  }
+  .section-movie-list.list .movie-info .movie-info-wrapper1 .title {
+    margin-bottom: 15px;
+    font-size: 25px;
+  }
+  .section-movie-list.list .movie-info .movie-info-wrapper1 .genre {
+    font-size: 18px;
+  }
+  .section-movie-list.list .movie-info .movie-info-wrapper2 .rating {
+    padding: 7px 12px;
+    font-size: 18px;
+  }
+  .section-movie-list figcaption {
+    padding: 20px 15px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .section-movie-list.module li {
+    width: calc(100% / 4);
+    padding: 10px 15px;
+  }
+  .section-movie-list.list li {
+    width: 100%;
+    padding: 10px 200px;
+  }
+  .section-movie-list.list .movie-info .movie-info-wrapper1 .title {
+    margin-bottom: 15px;
+    font-size: 32px;
+  }
+  .section-movie-list.list .movie-info .movie-info-wrapper1 .genre {
+    font-size: 20px;
+  }
+  .section-movie-list.list .movie-info .movie-info-wrapper2 .rating {
+    padding: 10px 15px;
+    font-size: 20px;
+  }
+  .section-movie-list figcaption {
+    padding: 20px 10px;
+  }
 }
 
 footer {
@@ -452,7 +669,7 @@ footer .wrapper .footer i {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   footer .wrapper {
     width: 310px;
     margin: 18px auto 0;
