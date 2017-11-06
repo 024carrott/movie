@@ -13,7 +13,7 @@
 }
 // mobile
 @mixin mobile {
-  @media screen and (max-width: $device-tablet-size - 1) {
+  @media screen and (max-width: ($device-tablet-size - 1)) {
     @content;
   }
 }
