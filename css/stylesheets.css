@@ -114,11 +114,19 @@ body {
 
 header {
   position: fixed;
+  top: 0;
+  left: 0;
   z-index: 9999;
   width: 100%;
   height: 60px;
   background-color: rgba(0, 0, 0, 0.2);
   text-shadow: 1px 1px  1px #999;
+}
+
+header::after {
+  content: '';
+  display: block;
+  clear: both;
 }
 
 header h2 {
@@ -129,39 +137,45 @@ header h2 a {
   color: #fff;
 }
 
-header button {
+header label {
   float: right;
   padding: 5px;
-  margin-top: -5px;
   border: 0;
   background-color: transparent;
 }
 
-header button i {
+header label i {
   color: #fff;
+  margin-top: -10px;
+  margin-left: 5px;
+  display: inline-block;
 }
 
 header input {
   float: right;
   width: 150px;
   height: 20px;
+  margin-top: -7px;
+  padding: 5px 7px;
+  border: 1px solid #fff;
   background-color: transparent;
   color: #fff;
 }
 
 header .search-list {
+  float: right;
+  position: absolute;
+  right: 70px;
+  top: 60px;
   width: 200px;
   background-color: rgba(99, 111, 133, 0.651);
   color: #fff;
-  position: absolute;
-  float: right;
-  right: 70px;
-  top: 60px;
   font-weight: normal;
   text-shadow: none;
 }
 
-header .search-list li {
+header .search-item {
+  display: block;
   padding: 10px;
 }
 
@@ -173,7 +187,7 @@ header .search-list li {
     font-size: 1.5rem;
   }
   header .wrapper i {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
   }
 }
@@ -186,7 +200,7 @@ header .search-list li {
     font-size: 1.3rem;
   }
   header .wrapper i {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: bold;
   }
 }
@@ -199,8 +213,11 @@ header .search-list li {
     font-size: 1.2rem;
   }
   header .wrapper i {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bold;
+  }
+  header .wrapper input {
+    width: 100px;
   }
 }
 

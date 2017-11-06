@@ -23,13 +23,13 @@
     <div class="wrapper">
       <h2><a href="#" class="logo">THEMOVIEBOX</a></h2>
       <div class="search-wrap">
-        <button type="button" class="header-search-btn">
+        <label type="label" class="header-search-btn" for="search">
           <i class="lnr lnr-magnifier"><span class="a11y-hidden"> 검색 </span></i>
-        </button>
-        <input type="text" id="search" class="header-search-bar">
+        </label>
+        <input type="text" id="search" class="header-search-bar" aria-describedby="search-description">
+        <span class="a11y-hidden" id="search-description"> 검색 </span>
         <div class="search-list">
-          <ul class="search-list-wrap">
-          </ul>
+          <ul class="search-list-wrap"></ul>
         </div>
       </div>
     </div>
@@ -167,7 +167,7 @@
       </div>
       <!-- e:main-content -->
     </div>
-    <div class="modal">
+    <div class="modal none">
       <button type="button" class="modal-close-btn">X</button>
       <figure class="modal-poster">
         <!-- <img src="../MOVIE/KakaoTalk_Photo_2017-10-25-11-12-07.jpeg" alt=""> -->
@@ -196,11 +196,11 @@
   <script src="./js/jquery.min.js"></script>
   <!-- <script src="./js/jquery.ajax-cross-origin.min.js"></script> -->
   <script src="./js/pallerax.js"></script>
+  <script src="js/modal.js"></script>
   <script src="./js/movie.js"></script>
   <script src="./js/movie_list.js"></script>
   <script src="./js/change_list_view.js"></script>
   <script src="js/skip-link.js"></script>
   <script src="js/search.js"></script>
-  <script src="js/modal.js"></script>
 </body>
 </html>
