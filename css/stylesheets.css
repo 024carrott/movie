@@ -381,15 +381,20 @@ main {
   padding: 20px 0;
 }
 
+.movie-category button {
+  overflow: visible;
+  font-size: 16px;
+}
+
 .movie-category button.active, .movie-category button:hover, .movie-category button:focus {
   color: #ff0079;
 }
 
-.movie-category button.active::after, .movie-category button:hover::after, .movie-category button:focus::after {
+.movie-category button.active::after, .movie-category button.active:after, .movie-category button:hover::after, .movie-category button:hover:after, .movie-category button:focus::after, .movie-category button:focus:after {
   content: '';
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -1px;
   background: #ff0079;
   width: 100%;
   height: 1px;
@@ -675,7 +680,7 @@ main {
 
 .modal {
   position: fixed;
-  z-index: 100;
+  z-index: 10002;
   background-color: #181818;
   top: 50%;
   left: 50%;

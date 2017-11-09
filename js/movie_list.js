@@ -1,4 +1,4 @@
-(function(global, Movie){
+(function(global, Movie, Modal){
   'use strict';
 
   // DOM ul과 loading, movie_category
@@ -252,8 +252,13 @@
     figure.appendChild(figcaption);
 
     li.appendChild(figure);
+    li.addEventListener('click', function() {
+      var modal = document.querySelector('.modal');
+      $(modal).removeClass('none');
+      Modal(data);
+    });
     target.appendChild(li);
   }
   init();
 
-}(window, window.Movie));
+}(window, window.Movie, window.Modal));
