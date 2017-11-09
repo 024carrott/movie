@@ -52,10 +52,6 @@ header {
     }
   }
 
-
-
-
-  // 수정 필요
   input {
     float: right;
     width: 150px;
@@ -71,13 +67,13 @@ header {
   .search-list {
     float: right;
     position: absolute;
-    right: 70px;
-    top: 60px;
     width: 200px;
     background-color: rgba(99, 111, 133, 0.651);
     color: $font-color1;
     font-weight: normal;
-    text-shadow: none;  
+    text-shadow: none;
+    max-height: 500px;
+    overflow-y: scroll;
   }
   .search-item {
     display: block;
@@ -93,6 +89,7 @@ header {
   header {
     .wrapper {
       padding: $wrapper-padding $wrapper-padding + 60;
+      position: relative;
       h2 {
         a {
           font-size: 1.5rem;
@@ -103,6 +100,10 @@ header {
         font-size: 1.2rem;
         font-weight: bold; 
       }
+    }
+    .search-list {
+      right: 80px;
+      top: 60px;
     }
   }
 }
@@ -120,6 +121,10 @@ header {
         font-size: 1.2rem;
         font-weight: bold;
       }
+    }
+    .search-list {
+      right: 50px;
+      top: 60px;
     }
   }
 }
@@ -139,8 +144,12 @@ header {
 
       }
       input {
-        width: 100px;
+        width: 90px;
       }
+    }
+    .search-list {
+      right: 20px;
+      top: 70px;
     }
   }
 }
