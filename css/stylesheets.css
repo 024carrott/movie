@@ -173,13 +173,13 @@ header input {
 header .search-list {
   float: right;
   position: absolute;
-  right: 70px;
-  top: 60px;
   width: 200px;
   background-color: rgba(99, 111, 133, 0.651);
   color: #fff;
   font-weight: normal;
   text-shadow: none;
+  max-height: 500px;
+  overflow-y: scroll;
 }
 
 header .search-item {
@@ -190,6 +190,7 @@ header .search-item {
 @media screen and (min-width: 1200px) {
   header .wrapper {
     padding: 20px 80px;
+    position: relative;
   }
   header .wrapper h2 a {
     font-size: 1.5rem;
@@ -197,6 +198,10 @@ header .search-item {
   header .wrapper i {
     font-size: 1.2rem;
     font-weight: bold;
+  }
+  header .search-list {
+    right: 80px;
+    top: 60px;
   }
 }
 
@@ -210,6 +215,10 @@ header .search-item {
   header .wrapper i {
     font-size: 1.2rem;
     font-weight: bold;
+  }
+  header .search-list {
+    right: 50px;
+    top: 60px;
   }
 }
 
@@ -225,7 +234,11 @@ header .search-item {
     font-weight: bold;
   }
   header .wrapper input {
-    width: 100px;
+    width: 90px;
+  }
+  header .search-list {
+    right: 20px;
+    top: 70px;
   }
 }
 
@@ -894,13 +907,14 @@ footer .wrapper .footer i {
 
 @media screen and (max-width: 767px) {
   footer {
-    height: 90px;
+    height: 100px;
   }
   footer .wrapper {
     padding: 20px;
   }
   footer .wrapper .footer p {
     font-size: 1rem;
+    text-align: center;
   }
   footer .wrapper .footer .github {
     margin-left: 39%;
