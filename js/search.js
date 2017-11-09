@@ -26,9 +26,11 @@
       }
     })
     html.addEventListener('click', function(e) {
-      var a = document.querySelector('.search-item');
       if( e.target.getAttribute('class') === 'search-item' ) {
         console.log(e.target);
+        return;
+      }
+      if( e.target.getAttribute('class') === 'modal-close-btn' ) {
         return;
       }
       removeRenderItem();
