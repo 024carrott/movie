@@ -69,13 +69,12 @@
 }
 @include tablet {
   .main-banner-inner {
-    @include clearfix;
-    .main-banner-content {
-      float: left;
-    }
-    .main-banner-rating {
-      float: right;
-    }
+    padding-top: 250px;
+    padding-bottom: 80px;
+  }
+  .main-banner-rating {
+    display: inline-block;
+    margin-top: 20px;
   }
 }
 @include mobile {
