@@ -16,7 +16,9 @@ header {
   @include clearfix;
 
   }
-  
+  .wrapper {
+    margin: 0 auto;
+  }
   h2 {
     float: left;
     a {
@@ -28,6 +30,7 @@ header {
     padding: 5px;
     border: 0;
     background-color: rgba(0,0,0,0);
+    cursor: pointer;
 
 
     i {
@@ -75,8 +78,9 @@ header {
 @include desktop {
   header {
     .wrapper {
-      padding: $wrapper-padding $wrapper-padding + 60;
       position: relative;
+      max-width: 1240px;
+      padding: $wrapper-padding;
       h2 {
         a {
           font-size: 1.5rem;
@@ -101,7 +105,8 @@ header {
 @include tablet {
   header {
     .wrapper {
-      padding: $wrapper-padding + 1 $wrapper-padding + 20;
+      padding: $wrapper-padding 0;
+      max-width: 728px;
       h2 {
         a {
           font-size: 1.3rem;

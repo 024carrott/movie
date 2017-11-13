@@ -138,6 +138,10 @@ header::after::after {
   clear: both;
 }
 
+header .wrapper {
+  margin: 0 auto;
+}
+
 header h2 {
   float: left;
 }
@@ -151,6 +155,7 @@ header label {
   padding: 5px;
   border: 0;
   background-color: transparent;
+  cursor: pointer;
 }
 
 header label i {
@@ -191,8 +196,9 @@ header .search-item {
 
 @media screen and (min-width: 769px) {
   header .wrapper {
-    padding: 20px 80px;
     position: relative;
+    max-width: 1240px;
+    padding: 20px;
   }
   header .wrapper h2 a {
     font-size: 1.5rem;
@@ -212,7 +218,8 @@ header .search-item {
 
 @media screen and (min-width: 427px) and (max-width: 768px) {
   header .wrapper {
-    padding: 21px 40px;
+    padding: 20px 0;
+    max-width: 728px;
   }
   header .wrapper h2 a {
     font-size: 1.3rem;
