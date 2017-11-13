@@ -3,10 +3,17 @@
   
   var search_list_wrap = $('.search-list-wrap');
   var html = document.querySelector('html');
+  var search_btn = document.querySelector('.header-search-btn');
+  var logo = document.querySelector('.logo');
+  var width = window.innerWidth;
+  
+  
   
   console.log(search_list_wrap)
   function init() {
     var search = $('.header-search-bar');
+    inputAnimation();
+  
 
     
     bind();
@@ -29,13 +36,77 @@
       if( e.target.getAttribute('class') === 'search-item' ) {
         console.log(e.target);
         return;
-      }
+      };
       if( e.target.getAttribute('class') === 'modal-close-btn' ) {
         return;
       }
       removeRenderItem();
-    }) 
+    });
+
+    $(window).resize(function(e) {
+      inputAnimation();  
+    })
+
+
   }
+  
+  // function inputAnimation() {
+  //   width = window.innerWidth;
+  //   console.log(width);
+
+  //   if( width < 426 ) {
+  //     console.log('실행');
+  //     var clicked = 0;
+  //     search_btn.addEventListener('click', function(e) {
+  //       clicked = clicked + 1
+  //       if(clicked === 0 || clicked % 2 === 0) {
+  //         $(search).animate({ width: 0 + 'px'}, 300);
+  //         setTimeout(function() {
+  //           $(search).css({
+  //             'opacity': '0'
+  //           }); 
+  //           $(logo).removeClass('none');
+  //         }, 310);
+  //       }else {
+  //         $(search).animate({ width: 230 + 'px'}, 300);
+  //         $(search).css({
+  //           'opacity': '1'
+  //         });
+  //         $(logo).addClass('none');
+  //       }
+  //     })
+  //   }else {
+  //     console.log('실행x');
+  //   }
+  // }
+
+
+  function inputAnimation() {
+    width = window.innerWidth;
+    var clicked = 0;
+
+    search_btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      clicked = clicked + 1
+      if(width < 426) {
+        console.log('실행');
+        if(clicked === 0 || clicked % 2 === 0) {
+          // $(search).animate({ width: 0 + 'px'}, 100);
+          $(search).animate({ width: 0 + 'px', opacity: 0, padding: 5 + 'px ' + 0 + 'px'  }, 200);
+          $(logo).delay(300).animate({ opacity: 1 }, 200);
+        }else {
+          // $(search).animate({ width: 230 + 'px'}, 300);
+          $(search).delay(300).animate({ width: 230 + 'px', opacity: 1, padding: 5 + 'px ' + 7 + 'px' }, 200);
+          $(logo).delay(300).animate({ opacity: 0 }, 200);
+        }
+      }else {
+        console.log('실행x');        
+      }
+    })
+  }
+  
+  
 
   function setRenderList() {
     global.setTimeout(function() {

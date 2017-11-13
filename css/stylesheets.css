@@ -234,12 +234,19 @@ header .search-item {
     font-weight: bold;
   }
   header .wrapper input {
-    width: 90px;
+    position: absolute;
+    right: 50px;
+    width: 0;
+    opacity: 0;
   }
   header .search-list {
     right: 20px;
     top: 70px;
   }
+}
+
+.none {
+  display: none;
 }
 
 .main-banner {
@@ -689,10 +696,10 @@ main {
 .modal {
   position: fixed;
   z-index: 100;
-  background-color: #181818;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background-color: #181818;
   color: #fff;
 }
 
@@ -701,10 +708,6 @@ main {
   border: none;
   background-color: #181818;
   color: #fff;
-}
-
-.modal-contents {
-  float: left;
 }
 
 .modal-contents span {
@@ -735,6 +738,7 @@ main {
     float: left;
   }
   .modal-contents {
+    float: left;
     width: 400px;
     margin-left: 30px;
   }
@@ -796,19 +800,23 @@ main {
 @media screen and (max-width: 767px) {
   .modal {
     padding: 10px 20px;
-    width: 250px;
+    width: 270px;
+    height: 500px;
+    overflow-y: scroll;
   }
   .modal-close-btn {
     font-size: 1.4rem;
   }
   .modal-poster {
+    float: left;
     margin-top: 40px;
   }
   .modal-poster img {
-    width: 250px;
+    width: 270px;
     height: 300px;
   }
   .modal-contents {
+    float: left;
     width: 240px;
   }
   .modal-contents span {
@@ -835,7 +843,6 @@ main {
 
 footer {
   position: relative;
-  height: 60px;
   width: 100%;
   background-color: #ededed;
   z-index: 100;
@@ -853,7 +860,7 @@ footer .wrapper .footer i {
 
 @media screen and (min-width: 1200px) {
   footer {
-    height: 60px;
+    min-height: 60px;
   }
   footer .wrapper {
     width: 700px;
@@ -880,7 +887,7 @@ footer .wrapper .footer i {
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
   footer {
-    height: 65px;
+    min-height: 65px;
   }
   footer .wrapper {
     width: 450px;
@@ -902,7 +909,7 @@ footer .wrapper .footer i {
 
 @media screen and (max-width: 767px) {
   footer {
-    height: 100px;
+    min-height: 100px;
   }
   footer .wrapper {
     padding: 20px;
