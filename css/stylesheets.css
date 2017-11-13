@@ -132,7 +132,7 @@ header {
   text-shadow: 1px 1px  1px #999;
 }
 
-header::after {
+header::after::after {
   content: '';
   display: block;
   clear: both;
@@ -209,11 +209,7 @@ header .search-item {
   }
 }
 
-<<<<<<< HEAD
-@media screen and (min-width: 425px) and (max-width: 1200px) {
-=======
 @media screen and (min-width: 427px) and (max-width: 768px) {
->>>>>>> bed1e4cf812f1b5482bea20e9fa06e573a21d0e8
   header .wrapper {
     padding: 21px 40px;
   }
@@ -236,11 +232,7 @@ header .search-item {
   }
 }
 
-<<<<<<< HEAD
-@media screen and (max-width: 425px) {
-=======
 @media screen and (max-width: 426px) {
->>>>>>> bed1e4cf812f1b5482bea20e9fa06e573a21d0e8
   header .wrapper {
     position: relative;
     padding: 22px 20px;
@@ -347,21 +339,10 @@ header .search-item {
   }
 }
 
-<<<<<<< HEAD
-@media screen and (min-width: 425px) and (max-width: 1200px) {
-  .main-banner-inner::after {
-    content: '';
-    display: block;
-    clear: both;
-  }
-  .main-banner-inner .main-banner-content {
-    float: left;
-=======
 @media screen and (min-width: 427px) and (max-width: 768px) {
   .main-banner-inner {
     padding-top: 250px;
     padding-bottom: 80px;
->>>>>>> bed1e4cf812f1b5482bea20e9fa06e573a21d0e8
   }
   .main-banner-rating {
     display: inline-block;
@@ -369,11 +350,7 @@ header .search-item {
   }
 }
 
-<<<<<<< HEAD
-@media screen and (max-width: 425px) {
-=======
 @media screen and (max-width: 426px) {
->>>>>>> bed1e4cf812f1b5482bea20e9fa06e573a21d0e8
   .main-banner-inner {
     padding-top: 250px;
     padding-bottom: 80px;
@@ -479,11 +456,7 @@ main {
   display: block;
 }
 
-<<<<<<< HEAD
-@media screen and (max-width: 425px) {
-=======
 @media screen and (max-width: 523px) {
->>>>>>> bed1e4cf812f1b5482bea20e9fa06e573a21d0e8
   .movie-category button {
     font-size: 10px;
   }
@@ -666,11 +639,7 @@ main {
   transform: translate(-50%, -50%);
 }
 
-<<<<<<< HEAD
-@media screen and (max-width: 425px) {
-=======
 @media screen and (max-width: 426px) {
->>>>>>> bed1e4cf812f1b5482bea20e9fa06e573a21d0e8
   .section-movie-list.module li {
     width: 100%;
     padding: 10px 15px;
@@ -697,11 +666,7 @@ main {
   }
 }
 
-<<<<<<< HEAD
-@media screen and (min-width: 425px) and (max-width: 1200px) {
-=======
 @media screen and (min-width: 427px) and (max-width: 768px) {
->>>>>>> bed1e4cf812f1b5482bea20e9fa06e573a21d0e8
   .section-movie-list.module li {
     width: calc(100% / 2);
     padding: 10px 20px;
@@ -825,11 +790,7 @@ main {
   }
 }
 
-<<<<<<< HEAD
-@media screen and (min-width: 425px) and (max-width: 1200px) {
-=======
 @media screen and (min-width: 427px) and (max-width: 768px) {
->>>>>>> bed1e4cf812f1b5482bea20e9fa06e573a21d0e8
   .modal {
     padding: 20px;
     width: 560px;
@@ -864,11 +825,7 @@ main {
   }
 }
 
-<<<<<<< HEAD
-@media screen and (max-width: 425px) {
-=======
 @media screen and (max-width: 426px) {
->>>>>>> bed1e4cf812f1b5482bea20e9fa06e573a21d0e8
   .modal {
     padding: 10px 20px;
     width: 270px;
@@ -915,19 +872,23 @@ main {
 }
 
 footer {
-  position: relative;
-  width: 100%;
-  background-color: #ededed;
   z-index: 100;
+  width: 100%;
+  text-align: center;
+  background-color: #ededed;
 }
 
-footer .wrapper .footer {
-  position: relative;
+footer:after::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+footer p {
   color: #999;
 }
 
-footer .wrapper .footer i {
-  position: relative;
+footer i {
   color: #999;
 }
 
@@ -935,77 +896,64 @@ footer .wrapper .footer i {
   footer {
     min-height: 60px;
   }
-  footer .wrapper {
-    width: 700px;
-    padding: 10px 0;
-    margin: 0 auto;
-  }
-  footer .wrapper .footer::after {
+  footer:after::after {
     content: '';
     display: block;
     clear: both;
   }
-  footer .wrapper .footer p {
-    font-size: 1.2rem;
-    margin-top: 12px;
-    float: left;
+  .footer-wrapper {
+    width: 768px;
+    margin: 0 auto;
   }
-  footer .wrapper .footer i {
-    top: 5px;
-    margin-left: 30px;
-    font-size: 2rem;
+  .copyright {
+    float: left;
+    margin-top: 20px;
+    font-size: 1.4rem;
+  }
+  .github {
     float: right;
+    margin-top: 15px;
+  }
+  .github i {
+    font-size: 2rem;
+    margin-left: 10px;
   }
 }
 
-<<<<<<< HEAD
-@media screen and (min-width: 425px) and (max-width: 1200px) {
-=======
 @media screen and (min-width: 427px) and (max-width: 768px) {
->>>>>>> bed1e4cf812f1b5482bea20e9fa06e573a21d0e8
   footer {
-    min-height: 65px;
+    min-height: 60px;
   }
-  footer .wrapper {
-    width: 450px;
-    margin: 0 auto;
+  .copyright {
+    display: inline-block;
+    font-size: 1.2rem;
+  }
+  .github {
+    display: inline-block;
+    margin-top: 10px;
+  }
+  .github i {
+    font-size: 2rem;
+    margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  footer {
+    min-height: 60px;
+  }
+  .copyright {
+    display: block;
+    padding-top: 20px;
+    font-size: 1rem;
+  }
+  .github {
+    display: block;
     padding: 10px 0;
   }
-  footer .wrapper .footer p {
-    font-size: 1.2rem;
-  }
-  footer .wrapper .footer .github {
-    margin-left: 180px;
-  }
-  footer .wrapper .footer .github i {
-    top: 3px;
-    margin-left: 20px;
+  .github i {
     font-size: 1.8rem;
-  }
-}
-
-<<<<<<< HEAD
-@media screen and (max-width: 425px) {
-=======
-@media screen and (max-width: 426px) {
->>>>>>> bed1e4cf812f1b5482bea20e9fa06e573a21d0e8
-  footer {
-    min-height: 100px;
-  }
-  footer .wrapper {
-    padding: 20px;
-  }
-  footer .wrapper .footer p {
-    font-size: 1rem;
-    text-align: center;
-  }
-  footer .wrapper .footer .github {
-    margin-left: 39%;
-  }
-  footer .wrapper .footer .github i {
-    top: 3px;
-    margin-left: 5px;
-    font-size: 2rem;
+    margin-left: 10px;
   }
 }
 

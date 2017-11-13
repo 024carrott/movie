@@ -1,20 +1,16 @@
 footer {
-  // position: fixed;
-  position: relative;
-  // bottom: 0;
-  // min-height: 60px;
-  width: 100%;
-  background-color: hsl(0, 0%, 93%);
   z-index: 100;
-  .wrapper {
-    .footer {
-      position: relative;
-      color: #999;
-      i {
-        position: relative;
-        color: #999;
-      }
-    }
+  width: 100%;
+  text-align: center;
+  background-color: hsl(0, 0%, 93%);
+  &:after {
+    @include clearfix;
+  }
+  p {
+    color: #999;
+  }
+  i {
+    color: #999;
   }
 }
 
@@ -22,71 +18,64 @@ footer {
 @include desktop {
   footer {
     min-height: 60px;
-    .wrapper{
-      width: 700px;
-      padding: 10px 0;
-      margin: 0 auto;     
-      .footer {
-        @include clearfix;
-        p {
-          font-size: 1.2rem;
-          margin-top: 12px;
-          float: left;
-        }
-        i {
-          top: 5px;
-          margin-left: 30px;
-          font-size: 2rem;
-          float: right;
-        }
-      }
+    &:after {
+      @include clearfix;
+    }
+  }
+  .footer-wrapper {
+    width: 768px;
+    margin: 0 auto;
+  }
+  .copyright {
+    float: left;
+    margin-top: 20px;
+    font-size: 1.4rem;
+  }
+  .github {
+    float: right;
+    margin-top: 15px;
+    i {
+      font-size: 2rem;
+      margin-left: 10px;
     }
   }
 }
 
 @include tablet {
-    footer {
-      min-height: 65px;
-      .wrapper{
-        width: 450px;
-        margin: 0 auto;
-        padding: 10px 0;
-        .footer {
-          p {
-            font-size: 1.2rem;
-          }
-          .github {
-            margin-left: 180px;
-            i {
-              top: 3px;
-              margin-left: 20px;
-              font-size: 1.8rem;
-            }
-          }
-        }
-      }
+  footer {
+    min-height: 60px;
+    
+  }
+  .copyright {
+    display: inline-block;
+    font-size: 1.2rem;
+  }
+  .github {
+    display: inline-block;
+    margin-top: 10px;
+    i {
+      font-size: 2rem;
+      margin-left: 10px;
     }
   }
+}
+
 
 @include mobile {
   footer {
-    min-height: 100px;
-    .wrapper{
-      padding: $wrapper-padding;
-      .footer {
-        p {
-          font-size: 1rem;
-          text-align: center;
-        }
-        .github {
-          margin-left: 39%;
-          i {
-            top: 3px;
-            margin-left: 5px;
-            font-size: 2rem;
-          }
-        }
-      }
+    min-height: 60px;
+  }
+  .copyright {
+    display: block;
+    padding-top: 20px;
+    font-size: 1rem;
+  }
+  .github {
+    display: block;
+    padding: 10px 0;
+    i {
+      font-size: 1.8rem;
+      margin-left: 10px;
     }
   }
 }
