@@ -11,7 +11,6 @@
       search_bar_actived = false,
       logo_display = false;
 
-  console.log(search_list_wrap)
   function init() {
     search_list_wrap = $('.search-list-wrap');
     search = $('.header-search-bar');
@@ -21,8 +20,6 @@
 
     isSearchBarClicked();
     bind();
-    // setLenderList();
-    // render();
   }
 
   // enter 을 눌렀을 때
@@ -64,10 +61,18 @@
       search_bar_isClicked_flag = false;
     }
 
-    if( browser_width < 426 ) {
+    if( browser_width < 467 ) {
       logo_display = true;
+      if( search_bar_actived ) {
+        logo.css({
+          display: 'none'
+        });
+      }
     } else {
       logo_display = false;
+      logo.css({
+        display: 'block'
+      });
     }
     console.log('search_bar_isClicked_flag: ', search_bar_isClicked_flag);
   }

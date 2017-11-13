@@ -159,6 +159,8 @@
       render_flag = false;
       stopLoading();
 
+      console.log('movies: ', movies.length);
+
       if( page === prev_page ) {
         alert('데이터를 불러 올 수 없습니다.');
         return;
@@ -191,6 +193,7 @@
             span.rating
 
     */
+    
     // createElement
     var li = document.createElement('li'),
         figure = document.createElement('figure'),
