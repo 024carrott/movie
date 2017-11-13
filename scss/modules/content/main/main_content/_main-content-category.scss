@@ -52,6 +52,7 @@
 
 @include breakpoint(0, 523px) {
   .movie-category {
+    margin-top: 50px;
     button {
       font-size: 10px;
       
