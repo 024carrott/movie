@@ -1,21 +1,25 @@
-(function (global, Movie, Modal) {
+(function (global, Movie, Modal, $) {
   'use strict';
   
-  var search_list_wrap = $('.search-list-wrap');
-  var html = document.querySelector('html');
-  var search_btn = document.querySelector('.header-search-btn');
-  var logo = document.querySelector('.logo');
-  var width = window.innerWidth;
+  var search_list_wrap = null;
+  var search = null;
+  var search_btn = null;
+  var logo = null;
+  var html = null;
   
-  
-  
+  var search_bar_isClicked_flag = false,
+      search_bar_actived = false,
+      logo_display = false;
+
   console.log(search_list_wrap)
   function init() {
-    var search = $('.header-search-bar');
-    inputAnimation();
-  
+    search_list_wrap = $('.search-list-wrap');
+    search = $('.header-search-bar');
+    search_btn = document.querySelector('.header-search-btn');
+    logo = $('.wrapper h2');
+    html = document.querySelector('html');
 
-    
+    isSearchBarClicked();
     bind();
     // setLenderList();
     // render();
@@ -31,7 +35,12 @@
 
         setRenderList();
       }
-    })
+    });
+
+    search_btn.addEventListener('click', function(e) {
+      setSearchBarStyle(e);
+    });
+
     html.addEventListener('click', function(e) {
       if( e.target.getAttribute('class') === 'search-item' ) {
         console.log(e.target);
@@ -42,68 +51,70 @@
       }
       removeRenderItem();
     });
-
-    $(window).resize(function(e) {
-      inputAnimation();  
-    })
-
+    window.addEventListener('resize', isSearchBarClicked);
 
   }
-  
-  // function inputAnimation() {
-  //   width = window.innerWidth;
-  //   console.log(width);
 
-  //   if( width < 426 ) {
-  //     console.log('실행');
-  //     var clicked = 0;
-  //     search_btn.addEventListener('click', function(e) {
-  //       clicked = clicked + 1
-  //       if(clicked === 0 || clicked % 2 === 0) {
-  //         $(search).animate({ width: 0 + 'px'}, 300);
-  //         setTimeout(function() {
-  //           $(search).css({
-  //             'opacity': '0'
-  //           }); 
-  //           $(logo).removeClass('none');
-  //         }, 310);
-  //       }else {
-  //         $(search).animate({ width: 230 + 'px'}, 300);
-  //         $(search).css({
-  //           'opacity': '1'
-  //         });
-  //         $(logo).addClass('none');
-  //       }
-  //     })
-  //   }else {
-  //     console.log('실행x');
-  //   }
-  // }
+  function isSearchBarClicked() {
+    var browser_width = window.innerWidth;
+    
+    if( browser_width < 769 ) {
+      search_bar_isClicked_flag = true;
+    } else {
+      search_bar_isClicked_flag = false;
+    }
 
+    if( browser_width < 426 ) {
+      logo_display = true;
+    } else {
+      logo_display = false;
+    }
+    console.log('search_bar_isClicked_flag: ', search_bar_isClicked_flag);
+  }
 
-  function inputAnimation() {
-    width = window.innerWidth;
-    var clicked = 0;
+  function setSearchBarStyle(e) {
+    if( !search_bar_isClicked_flag ) {
+      // 클릭 여부
+      return;
+    }
 
-    search_btn.addEventListener('click', function(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      clicked = clicked + 1
-      if(width < 426) {
-        console.log('실행');
-        if(clicked === 0 || clicked % 2 === 0) {
-          // $(search).animate({ width: 0 + 'px'}, 100);
-          $(search).animate({ width: 0 + 'px', opacity: 0, padding: 5 + 'px ' + 0 + 'px'  }, 200);
-          $(logo).delay(300).animate({ opacity: 1 }, 200);
-        }else {
-          // $(search).animate({ width: 230 + 'px'}, 300);
-          $(search).delay(300).animate({ width: 230 + 'px', opacity: 1, padding: 5 + 'px ' + 7 + 'px' }, 200);
-          $(logo).delay(300).animate({ opacity: 0 }, 200);
-        }
-      }else {
-        console.log('실행x');        
+    if( !search_bar_actived ) {
+      // 로고가 사라지고 search의 크기가 늘어나야하는 상태
+      
+      if( logo_display ) { 
+        
+        logo.css({
+          display: 'none'
+        });
       }
-    })
+      search.css({
+        border: '1px solid #fff'
+      });
+
+      search.animate({ 
+        width: 200 + 'px',
+        padding: '5px 7px' 
+      }, 200);
+      
+      search_bar_actived = true;
+    } else {
+      
+      search.animate({ 
+        width: 0 + 'px',
+        padding: '0'
+      }, 200);
+      
+      if( logo_display ) {
+
+        logo.css({
+          display: 'block'
+        });
+      }
+      search.css({
+        border: '0 none'
+      });
+      search_bar_actived = false;
+    }
   }
   
   
@@ -177,4 +188,4 @@
   
 
   init();
-})(window, window.Movie, window.Modal);
+})(window, window.Movie, window.Modal, window.jQuery);

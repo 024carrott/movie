@@ -103,7 +103,7 @@
 
       load_flag = true;
       prev_page = page;
-
+      
       console.log('movie page: ', page);
       console.log('url: ', url);
       $.ajax({
@@ -188,9 +188,7 @@
         url: search_url,
         success: function(response) {
           if(response.status === 'ok') {
-            console.log(response);
             search_data = response.data.movies;
-            console.log('search_data:', search_data);
           } 
         }
       })

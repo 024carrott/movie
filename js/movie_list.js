@@ -1,4 +1,4 @@
-(function(global, Movie){
+(function(global, Movie, Modal){
   'use strict';
 
   // DOM ul과 loading, movie_category
@@ -166,7 +166,6 @@
       // console.log('movie_list movies: ', movies);
       for(var i = limit * call_count, len = movies.length; i < len; i++) {
         var movie = movies[i];
-        console.log('movie_list movie: ', movie);
         render(movie, i);
       }
 
@@ -252,8 +251,13 @@
     figure.appendChild(figcaption);
 
     li.appendChild(figure);
+    li.addEventListener('click', function() {
+      var modal = document.querySelector('.modal');
+      $(modal).removeClass('none');
+      Modal(data);
+    });
     target.appendChild(li);
   }
   init();
 
-}(window, window.Movie));
+}(window, window.Movie, window.Modal));

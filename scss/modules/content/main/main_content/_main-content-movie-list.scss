@@ -1,3 +1,9 @@
+@mixin abbr {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  overflow: hidden;
+}
 .section-movie-list {
   margin-top: 35px;
   ul {
@@ -27,10 +33,7 @@
     }
 
     .movie-info-wrapper1 {
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      word-wrap: normal;
-      overflow: hidden;
+      
       color: $font-color3;
     }
     .movie-info-wrapper2 {
@@ -41,6 +44,7 @@
     }
     .genre {
       color: $font-color3;
+      @include abbr;
     }
     .rating {
       display: inline-block;
@@ -152,8 +156,18 @@
       }
       .movie-info {
         .movie-info-wrapper1 {
+          
           .title {
-            margin-bottom: 15px;
+            margin-bottom: 7px;
+            font-size: 16px;
+          }
+          .genre {
+            font-size: 14px;
+          }
+        }
+        .movie-info-wrapper2 {
+          .rating {
+            font-size: 16px;
           }
         }
       }
@@ -218,6 +232,7 @@
       }
       .movie-info {
         .movie-info-wrapper1 {
+          @include abbr;
           .title {
             margin-bottom: 15px;
             font-size: 32px;

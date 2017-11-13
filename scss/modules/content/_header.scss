@@ -57,11 +57,9 @@ header {
     width: 150px;
     height: 20px;
     margin-top: -7px;
-    padding: 5px 7px;
-    border: 1px solid $font-color1;
     background-color: rgba(0,0,0,0);
     color: #fff;
-    // box-sizing: border-box;
+    border: 0 none;
     // opacity: 0;
   }
   
@@ -106,6 +104,10 @@ header {
       right: 80px;
       top: 60px;
     }
+    input {
+      padding: 5px 7px;
+      border: 1px solid $font-color1;
+    }
   }
 }
 
@@ -127,12 +129,17 @@ header {
       right: 50px;
       top: 60px;
     }
+    input {
+      padding: 5px 7px;
+      border: 1px solid $font-color1;
+    }
   }
 }
 
 @include mobile {
   header {
     .wrapper {
+      position: relative;
       padding: $wrapper-padding + 2 $wrapper-padding;
       h2 {
         a {
@@ -146,9 +153,9 @@ header {
       }
       input {
         position: absolute;
+        top: 22px;
         right: 50px;
         width: 0;
-        opacity: 0;
       }
     }
     .search-list {
