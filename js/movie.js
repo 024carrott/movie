@@ -103,10 +103,7 @@
 
       load_flag = true;
       prev_page = page;
-
-      if( prev_page === 2 ) {
-        return;
-      }
+      
       console.log('movie page: ', page);
       console.log('url: ', url);
       $.ajax({
