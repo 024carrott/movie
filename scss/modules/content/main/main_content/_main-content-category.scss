@@ -52,14 +52,22 @@
 
 @include breakpoint(0, 523px) {
   .movie-category {
+    margin-top: 50px;
     button {
-      font-size: 10px;
+      font-size: 14px;
       
     }
     & > ul {
       & > li {
         margin-right: 0px;
       }
+    }
+  }
+}
+@include breakpoint(0, 321px) {
+  .movie-category {
+    button {
+      font-size: 11px;
     }
   }
 }

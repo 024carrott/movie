@@ -227,7 +227,7 @@ header .search-item {
   header input {
     position: absolute;
     top: 22px;
-    right: 50px;
+    right: 80px;
     width: 0;
   }
 }
@@ -457,11 +457,20 @@ main {
 }
 
 @media screen and (max-width: 523px) {
+  .movie-category {
+    margin-top: 50px;
+  }
   .movie-category button {
-    font-size: 10px;
+    font-size: 14px;
   }
   .movie-category > ul > li {
     margin-right: 0px;
+  }
+}
+
+@media screen and (max-width: 321px) {
+  .movie-category button {
+    font-size: 11px;
   }
 }
 
@@ -486,6 +495,14 @@ main {
 
 .movie-list-change ul button.active, .movie-list-change ul button:hover {
   color: #ff0079;
+}
+
+@media screen and (max-width: 540px) {
+  .movie-list-change {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 }
 
 .section-movie-list {

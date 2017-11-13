@@ -16,7 +16,6 @@
   <!-- s: 본문 바로가기 링크 -->
   <div class="skip">
     <h2 class="a11y-hidden">바로가기 영역</h2>
-    <a class="skip-content" href="#content">본문 바로가기</a>
     <a class="skip-movie-category" href="#category">카테고리 바로가기</a>
   </div>
   <!-- e: 본문 바로가기 링크 -->
@@ -25,7 +24,7 @@
     <div class="wrapper">
       <h2><a href="#" class="logo">THE MOVIE BOX</a></h2>
       <div class="search-wrap">
-        <label class="header-search-btn" for="search">
+        <label class="header-search-btn" tabindex="0" for="search">
           <i class="lnr lnr-magnifier"><span class="a11y-hidden"> 검색 </span></i>
         </label>
         <input type="text" id="search" class="header-search-bar" aria-describedby="search-description">
@@ -92,24 +91,6 @@
           <!-- s: category -->
           <section class="section-category" id="category">
             <h3 class="a11y-hidden">영화 카테고리 리스트</h3>
-            <!-- s:movie-list-change -->
-            <div class="movie-list-change">
-              <ul>
-                <li>
-                  <button type="button" class="btn-list-change module" aria-describedby="movie-list-module">
-                    <span class="a11y-hidden" id="movie-list-module">모듈 형식으로 보기</span>
-                    <i class="material-icons">&#xE8F0;</i>
-                  </button>
-                </li>
-                <li>
-                  <button type="button" class="btn-list-change list" aria-describedby="movie-list-list">
-                    <span class="a11y-hidden" id="movie-list-list">리스트 형식으로 보기</span>
-                    <i class="material-icons">&#xE8EF;</i>
-                  </button>
-                </li>
-              </ul>
-            </div>
-            <!-- e:movie-list-change -->
             <!-- s:movie-category -->
             <div class="movie-category">
               <ul>
@@ -155,6 +136,24 @@
               </ul>
             </div>
             <!-- e:movie-category -->
+            <!-- s:movie-list-change -->
+            <div class="movie-list-change">
+              <ul>
+                <li>
+                  <button type="button" class="btn-list-change module" aria-describedby="movie-list-module">
+                    <span class="a11y-hidden" id="movie-list-module">모듈 형식으로 보기</span>
+                    <i class="material-icons">&#xE8F0;</i>
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="btn-list-change list" aria-describedby="movie-list-list">
+                    <span class="a11y-hidden" id="movie-list-list">리스트 형식으로 보기</span>
+                    <i class="material-icons">&#xE8EF;</i>
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <!-- e:movie-list-change -->
           </section>
           <!-- e: category -->
           <!-- s: movie-list -->

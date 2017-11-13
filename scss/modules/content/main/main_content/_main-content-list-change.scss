@@ -18,3 +18,11 @@
     }
   }
 }
+
+@include breakpoint(0, 540px) {
+  .movie-list-change {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}

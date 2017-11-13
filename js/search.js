@@ -37,6 +37,13 @@
     search_btn.addEventListener('click', function(e) {
       setSearchBarStyle(e);
     });
+    search_btn.addEventListener('keypress', function(e) {
+      if( e.charCode === 13 ) {
+        setSearchBarStyle(e);
+        search.focus();
+      }
+    });
+
 
     html.addEventListener('click', function(e) {
       if( e.target.getAttribute('class') === 'search-item' ) {
@@ -61,7 +68,7 @@
       search_bar_isClicked_flag = false;
     }
 
-    if( browser_width < 467 ) {
+    if( browser_width < 512 ) {
       logo_display = true;
       if( search_bar_actived ) {
         logo.css({
