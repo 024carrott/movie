@@ -61,6 +61,7 @@ header {
     border: 1px solid $font-color1;
     background-color: rgba(0,0,0,0);
     color: #fff;
+    // box-sizing: border-box;
     // opacity: 0;
   }
   
@@ -144,7 +145,10 @@ header {
 
       }
       input {
-        width: 90px;
+        position: absolute;
+        right: 50px;
+        width: 0;
+        opacity: 0;
       }
     }
     .search-list {
@@ -152,5 +156,8 @@ header {
       top: 70px;
     }
   }
+}
+.none {
+  display: none;
 }
 
