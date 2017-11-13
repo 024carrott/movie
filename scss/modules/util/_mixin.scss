@@ -7,13 +7,13 @@
 }
 // tablet
 @mixin tablet {
-  @media screen and (min-width: $device-tablet-size) and (max-width: ($device-desktop-size)) {
+  @media screen and (min-width: $device-mobile-size) and (max-width: ($device-desktop-size)) {
     @content;
   }
 }
 // mobile
 @mixin mobile {
-  @media screen and (max-width: ($device-tablet-size)) {
+  @media screen and (max-width: ($device-mobile-size )) {
     @content;
   }
 }
