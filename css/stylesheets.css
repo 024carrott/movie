@@ -461,10 +461,16 @@ main {
     margin-top: 50px;
   }
   .movie-category button {
-    font-size: 10px;
+    font-size: 14px;
   }
   .movie-category > ul > li {
     margin-right: 0px;
+  }
+}
+
+@media screen and (max-width: 321px) {
+  .movie-category button {
+    font-size: 11px;
   }
 }
 
@@ -491,10 +497,10 @@ main {
   color: #ff0079;
 }
 
-@media screen and (max-width: 523px) {
+@media screen and (max-width: 540px) {
   .movie-list-change {
     position: absolute;
-    top: 10px;
+    top: 0;
     right: 0;
   }
 }
