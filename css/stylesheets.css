@@ -162,7 +162,9 @@ header label i {
 
 header input {
   float: right;
-  width: 150px;
+  position: absolute;
+  top: 22px;
+  width: 0;
   height: 20px;
   margin-top: -7px;
   background-color: transparent;
@@ -199,13 +201,12 @@ header .search-item {
     font-size: 1.2rem;
     font-weight: bold;
   }
+  header .wrapper input {
+    right: 120px;
+  }
   header .search-list {
     right: 80px;
     top: 60px;
-  }
-  header input {
-    padding: 5px 7px;
-    border: 1px solid #fff;
   }
 }
 
@@ -220,15 +221,12 @@ header .search-item {
     font-size: 1.2rem;
     font-weight: bold;
   }
+  header .wrapper input {
+    right: 80px;
+  }
   header .search-list {
     right: 50px;
     top: 60px;
-  }
-  header input {
-    position: absolute;
-    top: 22px;
-    right: 80px;
-    width: 0;
   }
 }
 
@@ -245,10 +243,7 @@ header .search-item {
     font-weight: bold;
   }
   header .wrapper input {
-    position: absolute;
-    top: 22px;
     right: 50px;
-    width: 0;
   }
   header .search-list {
     right: 20px;

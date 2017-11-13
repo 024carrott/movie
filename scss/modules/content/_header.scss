@@ -40,7 +40,9 @@ header {
 
   input {
     float: right;
-    width: 150px;
+    position: absolute;
+    top: 22px;
+    width: 0;
     height: 20px;
     margin-top: -7px;
     background-color: rgba(0,0,0,0);
@@ -85,14 +87,13 @@ header {
         font-size: 1.2rem;
         font-weight: bold; 
       }
+      input {
+        right: 120px;
+      }
     }
     .search-list {
       right: 80px;
       top: 60px;
-    }
-    input {
-      padding: 5px 7px;
-      border: 1px solid $font-color1;
     }
   }
 }
@@ -110,16 +111,13 @@ header {
         font-size: 1.2rem;
         font-weight: bold;
       }
+      input {
+        right: 80px;
+      }
     }
     .search-list {
       right: 50px;
       top: 60px;
-    }
-    input {
-      position: absolute;
-      top: 22px;
-      right: 80px;
-      width: 0;
     }
   }
 }
@@ -140,10 +138,7 @@ header {
 
       }
       input {
-        position: absolute;
-        top: 22px;
         right: 50px;
-        width: 0;
       }
     }
     .search-list {

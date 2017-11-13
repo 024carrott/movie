@@ -61,34 +61,16 @@
 
   function isSearchBarClicked() {
     var browser_width = window.innerWidth;
-    
-    if( browser_width < 769 ) {
-      search_bar_isClicked_flag = true;
-    } else {
-      search_bar_isClicked_flag = false;
-    }
-
+  
     if( browser_width < 512 ) {
       logo_display = true;
-      if( search_bar_actived ) {
-        logo.css({
-          display: 'none'
-        });
-      }
     } else {
       logo_display = false;
-      logo.css({
-        display: 'block'
-      });
     }
     console.log('search_bar_isClicked_flag: ', search_bar_isClicked_flag);
   }
 
   function setSearchBarStyle(e) {
-    if( !search_bar_isClicked_flag ) {
-      // 클릭 여부
-      return;
-    }
 
     if( !search_bar_actived ) {
       // 로고가 사라지고 search의 크기가 늘어나야하는 상태
