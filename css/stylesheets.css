@@ -209,7 +209,7 @@ header .search-item {
     font-weight: bold;
   }
   header .search-list {
-    right: 80px;
+    right: 60px;
     top: 60px;
   }
 }
@@ -774,6 +774,7 @@ main {
   }
   .modal-close-btn {
     font-size: 1.4rem;
+    cursor: pointer;
   }
   .modal-poster {
     float: left;
