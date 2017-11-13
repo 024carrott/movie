@@ -4,10 +4,10 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 10000;
-  
+  width: 200px;
   a {
     display: block;
-    position: relative;
+    position: absolute;
     top: 0;
     left: -9999px;
     padding: 8px 12px;

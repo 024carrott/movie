@@ -98,11 +98,12 @@ a {
   left: 50%;
   transform: translateX(-50%);
   z-index: 10000;
+  width: 200px;
 }
 
 .skip a {
   display: block;
-  position: relative;
+  position: absolute;
   top: 0;
   left: -9999px;
   padding: 8px 12px;
@@ -164,10 +165,9 @@ header input {
   width: 150px;
   height: 20px;
   margin-top: -7px;
-  padding: 5px 7px;
-  border: 1px solid #fff;
   background-color: transparent;
   color: #fff;
+  border: 0 none;
 }
 
 header .search-list {
@@ -203,9 +203,13 @@ header .search-item {
     right: 80px;
     top: 60px;
   }
+  header input {
+    padding: 5px 7px;
+    border: 1px solid #fff;
+  }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1199px) {
+@media screen and (min-width: 768px) and (max-width: 1200px) {
   header .wrapper {
     padding: 21px 40px;
   }
@@ -220,10 +224,15 @@ header .search-item {
     right: 50px;
     top: 60px;
   }
+  header input {
+    padding: 5px 7px;
+    border: 1px solid #fff;
+  }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   header .wrapper {
+    position: relative;
     padding: 22px 20px;
   }
   header .wrapper h2 a {
@@ -234,7 +243,10 @@ header .search-item {
     font-weight: bold;
   }
   header .wrapper input {
-    width: 90px;
+    position: absolute;
+    top: 22px;
+    right: 50px;
+    width: 0;
   }
   header .search-list {
     right: 20px;
@@ -321,7 +333,7 @@ header .search-item {
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1199px) {
+@media screen and (min-width: 768px) and (max-width: 1200px) {
   .main-banner-inner::after {
     content: '';
     display: block;
@@ -335,7 +347,7 @@ header .search-item {
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .main-banner-inner {
     padding-top: 250px;
     padding-bottom: 80px;
@@ -403,16 +415,6 @@ main {
   color: #ff0079;
 }
 
-.movie-category button.active::after, .movie-category button.active:after, .movie-category button:hover::after, .movie-category button:hover:after, .movie-category button:focus::after, .movie-category button:focus:after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -1px;
-  background: #ff0079;
-  width: 100%;
-  height: 1px;
-}
-
 .movie-category > ul::after {
   content: '';
   display: block;
@@ -449,6 +451,15 @@ main {
 
 .movie-category .sub-category.active {
   display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .movie-category button {
+    font-size: 10px;
+  }
+  .movie-category > ul > li {
+    margin-right: 0px;
+  }
 }
 
 .movie-list-change ul::after {
@@ -518,10 +529,6 @@ main {
 }
 
 .section-movie-list .movie-info .movie-info-wrapper1 {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  word-wrap: normal;
-  overflow: hidden;
   color: #BBBCC4;
 }
 
@@ -531,6 +538,10 @@ main {
 
 .section-movie-list .movie-info .genre {
   color: #BBBCC4;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  overflow: hidden;
 }
 
 .section-movie-list .movie-info .rating {
@@ -621,7 +632,7 @@ main {
   transform: translate(-50%, -50%);
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .section-movie-list.module li {
     width: 100%;
     padding: 10px 15px;
@@ -634,14 +645,21 @@ main {
     padding: 10px 15px;
   }
   .section-movie-list.list .movie-info .movie-info-wrapper1 .title {
-    margin-bottom: 15px;
+    margin-bottom: 7px;
+    font-size: 16px;
+  }
+  .section-movie-list.list .movie-info .movie-info-wrapper1 .genre {
+    font-size: 14px;
+  }
+  .section-movie-list.list .movie-info .movie-info-wrapper2 .rating {
+    font-size: 16px;
   }
   .section-movie-list figcaption {
     padding: 20px 15px;
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1199px) {
+@media screen and (min-width: 768px) and (max-width: 1200px) {
   .section-movie-list.module li {
     width: calc(100% / 2);
     padding: 10px 20px;
@@ -674,6 +692,12 @@ main {
   .section-movie-list.list li {
     width: 100%;
     padding: 10px 200px;
+  }
+  .section-movie-list.list .movie-info .movie-info-wrapper1 {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    overflow: hidden;
   }
   .section-movie-list.list .movie-info .movie-info-wrapper1 .title {
     margin-bottom: 15px;
@@ -761,7 +785,7 @@ main {
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1199px) {
+@media screen and (min-width: 768px) and (max-width: 1200px) {
   .modal {
     padding: 20px;
     width: 560px;
@@ -798,7 +822,7 @@ main {
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .modal {
     padding: 10px 20px;
     width: 250px;
@@ -883,7 +907,7 @@ footer .wrapper .footer i {
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1199px) {
+@media screen and (min-width: 768px) and (max-width: 1200px) {
   footer {
     height: 65px;
   }
@@ -905,7 +929,7 @@ footer .wrapper .footer i {
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   footer {
     height: 100px;
   }

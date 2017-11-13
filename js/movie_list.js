@@ -160,7 +160,7 @@
       stopLoading();
 
       if( page === prev_page ) {
-        alert('데이터를 불러 올 수 없습니다.');
+        // alert('데이터를 불러 올 수 없습니다.');
         return;
       }
       // console.log('movie_list movies: ', movies);
