@@ -139,6 +139,7 @@ header::after::after {
 }
 
 header .wrapper {
+  position: relative;
   margin: 0 auto;
 }
 
@@ -167,7 +168,10 @@ header label i {
 
 header input {
   float: right;
-  width: 150px;
+  position: absolute;
+  top: 22px;
+  right: 50px;
+  width: 0;
   height: 20px;
   margin-top: -7px;
   background-color: transparent;
@@ -194,7 +198,6 @@ header .search-item {
 
 @media screen and (min-width: 769px) {
   header .wrapper {
-    position: relative;
     max-width: 1240px;
     padding: 20px;
   }
@@ -209,15 +212,11 @@ header .search-item {
     right: 80px;
     top: 60px;
   }
-  header input {
-    padding: 5px 7px;
-    border: 1px solid #fff;
-  }
 }
 
 @media screen and (min-width: 427px) and (max-width: 768px) {
   header .wrapper {
-    padding: 20px 0;
+    padding: 20px;
     max-width: 728px;
   }
   header .wrapper h2 a {
@@ -230,12 +229,6 @@ header .search-item {
   header .search-list {
     right: 50px;
     top: 60px;
-  }
-  header input {
-    position: absolute;
-    top: 22px;
-    right: 80px;
-    width: 0;
   }
 }
 
@@ -250,12 +243,6 @@ header .search-item {
   header .wrapper i {
     font-size: 1rem;
     font-weight: bold;
-  }
-  header .wrapper input {
-    position: absolute;
-    top: 22px;
-    right: 50px;
-    width: 0;
   }
   header .search-list {
     right: 20px;
