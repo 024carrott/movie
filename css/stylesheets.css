@@ -187,7 +187,7 @@ header .search-item {
   padding: 10px;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 769px) {
   header .wrapper {
     padding: 20px 80px;
     position: relative;
@@ -209,7 +209,11 @@ header .search-item {
   }
 }
 
+<<<<<<< HEAD
 @media screen and (min-width: 425px) and (max-width: 1200px) {
+=======
+@media screen and (min-width: 427px) and (max-width: 768px) {
+>>>>>>> bed1e4cf812f1b5482bea20e9fa06e573a21d0e8
   header .wrapper {
     padding: 21px 40px;
   }
@@ -225,12 +229,18 @@ header .search-item {
     top: 60px;
   }
   header input {
-    padding: 5px 7px;
-    border: 1px solid #fff;
+    position: absolute;
+    top: 22px;
+    right: 50px;
+    width: 0;
   }
 }
 
+<<<<<<< HEAD
 @media screen and (max-width: 425px) {
+=======
+@media screen and (max-width: 426px) {
+>>>>>>> bed1e4cf812f1b5482bea20e9fa06e573a21d0e8
   header .wrapper {
     position: relative;
     padding: 22px 20px;
@@ -323,7 +333,7 @@ header .search-item {
   color: #ff0079;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 769px) {
   .main-banner-inner::after {
     content: '';
     display: block;
@@ -337,6 +347,7 @@ header .search-item {
   }
 }
 
+<<<<<<< HEAD
 @media screen and (min-width: 425px) and (max-width: 1200px) {
   .main-banner-inner::after {
     content: '';
@@ -345,13 +356,24 @@ header .search-item {
   }
   .main-banner-inner .main-banner-content {
     float: left;
+=======
+@media screen and (min-width: 427px) and (max-width: 768px) {
+  .main-banner-inner {
+    padding-top: 250px;
+    padding-bottom: 80px;
+>>>>>>> bed1e4cf812f1b5482bea20e9fa06e573a21d0e8
   }
-  .main-banner-inner .main-banner-rating {
-    float: right;
+  .main-banner-rating {
+    display: inline-block;
+    margin-top: 20px;
   }
 }
 
+<<<<<<< HEAD
 @media screen and (max-width: 425px) {
+=======
+@media screen and (max-width: 426px) {
+>>>>>>> bed1e4cf812f1b5482bea20e9fa06e573a21d0e8
   .main-banner-inner {
     padding-top: 250px;
     padding-bottom: 80px;
@@ -457,7 +479,11 @@ main {
   display: block;
 }
 
+<<<<<<< HEAD
 @media screen and (max-width: 425px) {
+=======
+@media screen and (max-width: 523px) {
+>>>>>>> bed1e4cf812f1b5482bea20e9fa06e573a21d0e8
   .movie-category button {
     font-size: 10px;
   }
@@ -538,6 +564,10 @@ main {
 
 .section-movie-list .movie-info .title {
   color: #494C62;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  overflow: hidden;
 }
 
 .section-movie-list .movie-info .genre {
@@ -636,7 +666,11 @@ main {
   transform: translate(-50%, -50%);
 }
 
+<<<<<<< HEAD
 @media screen and (max-width: 425px) {
+=======
+@media screen and (max-width: 426px) {
+>>>>>>> bed1e4cf812f1b5482bea20e9fa06e573a21d0e8
   .section-movie-list.module li {
     width: 100%;
     padding: 10px 15px;
@@ -663,7 +697,11 @@ main {
   }
 }
 
+<<<<<<< HEAD
 @media screen and (min-width: 425px) and (max-width: 1200px) {
+=======
+@media screen and (min-width: 427px) and (max-width: 768px) {
+>>>>>>> bed1e4cf812f1b5482bea20e9fa06e573a21d0e8
   .section-movie-list.module li {
     width: calc(100% / 2);
     padding: 10px 20px;
@@ -688,7 +726,7 @@ main {
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 769px) {
   .section-movie-list.module li {
     width: calc(100% / 4);
     padding: 10px 15px;
@@ -753,7 +791,7 @@ main {
   color: #b8b8b8;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 769px) {
   .modal {
     padding: 20px;
     width: 700px;
@@ -787,7 +825,11 @@ main {
   }
 }
 
+<<<<<<< HEAD
 @media screen and (min-width: 425px) and (max-width: 1200px) {
+=======
+@media screen and (min-width: 427px) and (max-width: 768px) {
+>>>>>>> bed1e4cf812f1b5482bea20e9fa06e573a21d0e8
   .modal {
     padding: 20px;
     width: 560px;
@@ -822,7 +864,11 @@ main {
   }
 }
 
+<<<<<<< HEAD
 @media screen and (max-width: 425px) {
+=======
+@media screen and (max-width: 426px) {
+>>>>>>> bed1e4cf812f1b5482bea20e9fa06e573a21d0e8
   .modal {
     padding: 10px 20px;
     width: 270px;
@@ -885,7 +931,7 @@ footer .wrapper .footer i {
   color: #999;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 769px) {
   footer {
     min-height: 60px;
   }
@@ -912,7 +958,11 @@ footer .wrapper .footer i {
   }
 }
 
+<<<<<<< HEAD
 @media screen and (min-width: 425px) and (max-width: 1200px) {
+=======
+@media screen and (min-width: 427px) and (max-width: 768px) {
+>>>>>>> bed1e4cf812f1b5482bea20e9fa06e573a21d0e8
   footer {
     min-height: 65px;
   }
@@ -934,7 +984,11 @@ footer .wrapper .footer i {
   }
 }
 
+<<<<<<< HEAD
 @media screen and (max-width: 425px) {
+=======
+@media screen and (max-width: 426px) {
+>>>>>>> bed1e4cf812f1b5482bea20e9fa06e573a21d0e8
   footer {
     min-height: 100px;
   }

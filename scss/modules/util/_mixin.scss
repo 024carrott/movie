@@ -1,25 +1,25 @@
 // 반응형 Media query
 // desktop
 @mixin desktop {
-  @media screen and (min-width: $device-desktop-size) {
+  @media screen and (min-width: $device-tablet-size + 1) {
     @content;
   }
 }
 // tablet
 @mixin tablet {
-  @media screen and (min-width: $device-mobile-size) and (max-width: ($device-desktop-size)) {
+  @media screen and (min-width: $device-mobile-size + 1) and (max-width: $device-tablet-size) {
     @content;
   }
 }
 // mobile
 @mixin mobile {
-  @media screen and (max-width: ($device-mobile-size )) {
+  @media screen and (max-width: $device-mobile-size) {
     @content;
   }
 }
 
 // breakPoint
-@mixin breakPoint($min: 0, $max: 0) {
+@mixin breakpoint($min: 0, $max: 0) {
 
   @if( $max == 0 ) {
     @media screen and (min-width: $min) {

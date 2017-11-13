@@ -41,6 +41,7 @@
     }
     .title {
       color: $font-color5;
+      @include abbr;
     }
     .genre {
       color: $font-color3;

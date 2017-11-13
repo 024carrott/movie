@@ -130,8 +130,10 @@ header {
       top: 60px;
     }
     input {
-      padding: 5px 7px;
-      border: 1px solid $font-color1;
+      position: absolute;
+      top: 22px;
+      right: 50px;
+      width: 0;
     }
   }
 }
