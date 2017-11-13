@@ -2,7 +2,7 @@
   'use strict';
   
  
-  var modal_poster = document.querySelector('.modal-poster');
+  var modal_container = document.querySelector('.modal-container');
       // modal_contents = document.querySelector('.modal-contents');
 
   // createElements
@@ -14,8 +14,8 @@
   modal_summary = document.createElement('p');
   
   // append
-  modal_poster.appendChild(modal_img);
-  modal_poster.appendChild(modal_contents);
+  modal_container.appendChild(modal_img);
+  modal_container.appendChild(modal_contents);
   modal_contents.appendChild(modal_h4);
   modal_contents.appendChild(modal_year);
   modal_contents.appendChild(modal_genre);
@@ -26,6 +26,7 @@
     // setAttribute
     modal_contents.setAttribute('class', 'modal-contents');
     modal_img.setAttribute('src', data.medium_cover_image);
+    modal_img.setAttribute('class', 'modal-poster');
     modal_h4.setAttribute('class', 'modal-title');
     modal_year.setAttribute('class', 'modal-year');
     modal_genre.setAttribute('class', 'modal-genre');
