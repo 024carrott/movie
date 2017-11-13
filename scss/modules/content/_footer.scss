@@ -2,7 +2,7 @@ footer {
   // position: fixed;
   position: relative;
   // bottom: 0;
-  height: 60px;
+  // min-height: 60px;
   width: 100%;
   background-color: hsl(0, 0%, 93%);
   z-index: 100;
@@ -21,7 +21,7 @@ footer {
 
 @include desktop {
   footer {
-    height: 60px;  
+    min-height: 60px;
     .wrapper{
       width: 700px;
       padding: 10px 0;
@@ -46,7 +46,7 @@ footer {
 
 @include tablet {
     footer {
-      height: 65px;
+      min-height: 65px;
       .wrapper{
         width: 450px;
         margin: 0 auto;
@@ -70,7 +70,7 @@ footer {
 
 @include mobile {
   footer {
-    height: 100px;
+    min-height: 100px;
     .wrapper{
       padding: $wrapper-padding;
       .footer {

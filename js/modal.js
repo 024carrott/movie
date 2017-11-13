@@ -2,10 +2,12 @@
   'use strict';
   
  
-  var modal_poster = document.querySelector('.modal-poster'),
-      modal_contents = document.querySelector('.modal-contents');
+  var modal_poster = document.querySelector('.modal-poster');
+      // modal_contents = document.querySelector('.modal-contents');
+
   // createElements
-  var modal_img = document.createElement('img'),
+  var modal_contents = document.createElement('figcaption'),
+  modal_img = document.createElement('img'),
   modal_h4 = document.createElement('h4'),
   modal_year = document.createElement('span'),
   modal_genre = document.createElement('span'),
@@ -13,6 +15,7 @@
   
   // append
   modal_poster.appendChild(modal_img);
+  modal_poster.appendChild(modal_contents);
   modal_contents.appendChild(modal_h4);
   modal_contents.appendChild(modal_year);
   modal_contents.appendChild(modal_genre);
@@ -21,6 +24,7 @@
     
     console.log('모달 데이터 전송');
     // setAttribute
+    modal_contents.setAttribute('class', 'modal-contents');
     modal_img.setAttribute('src', data.medium_cover_image);
     modal_h4.setAttribute('class', 'modal-title');
     modal_year.setAttribute('class', 'modal-year');
