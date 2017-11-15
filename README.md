@@ -1,7 +1,7 @@
 # the-movie-box
 > 영화 소개 사이트
 
-## [The-movie-box](https://github.com/024carrott/movie/index.html)
+## [The-movie-box](https://024carrott.github.com/movie/index.html)
 
 ## 목표
 > 접근성과 반응형을 고려한 영화 소개하는 SPA 웹 페이지 만들기
