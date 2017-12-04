@@ -778,6 +778,8 @@ main {
   }
   .modal-poster {
     float: left;
+    width: 250px;
+    height: 350px;
   }
   .modal-contents {
     float: left;
@@ -812,7 +814,9 @@ main {
   }
   .modal-poster {
     float: left;
-    margin-top: 35px;
+    margin-top: 20px;
+    width: 200px;
+    height: 250px;
   }
   .modal-contents {
     float: right;
@@ -852,8 +856,7 @@ main {
   .modal-poster {
     float: left;
     margin-top: 40px;
-  }
-  .modal-poster img {
+    margin-bottom: 10px;
     width: 270px;
     height: 300px;
   }

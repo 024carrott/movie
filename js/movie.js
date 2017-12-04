@@ -43,8 +43,33 @@
 
     };
 
+    var genres =  {
+      "28": "액션",
+      "12": "모험",
+      "16": "애니메이션",
+      "35": "코미디",
+      "80": "범죄",
+      "99": "다큐멘터리",
+      "18": "드라마",
+      "10751": "가족",
+      "14": "판타지",
+      "36": "역사",
+      "27": "공포",
+      "10402": "음악",
+      "9648": "미스터리",
+      "10749": "로맨스",
+      "878": "SF",
+      "10770": "TV 영화",
+      "53": "스릴러",
+      "10752": "전쟁",
+      "37": "서부"
+    };
+    // img url
+    var large_img_url = 'https://image.tmdb.org/t/p/w500',
+    small_img_url = 'https://image.tmdb.org/t/p/w342';
+
     // 검색 url
-    var search_url = 'https://yts.ag/api/v2/list_movies.json?query_term=';
+    var search_url = 'https://api.themoviedb.org/3/search/movie?api_key=13b38a28972a041bf8f58fe46dbc7ff6&language=ko&page=1&include_adult=false&query=';
     // search data 를 담을 배열 변수
     var search_data = [];
     // var url_result = '';
@@ -90,7 +115,30 @@
       movie_data = [];
       page = 1;
       call_count = 0;
+    };
+    /**
+     * @func getGenre
+     * @description 장르를 반환하는 함수.
+     */
+    var getGenre = function(id) {
+      id = id + '';
+      return genres[id];
     }
+    /**
+     * @func getLargeImgUrl
+     * @description 큰 이미지 url 주소를 반환.
+     */
+    var getLargeImgUrl = function(poster_path) {
+      return large_img_url + poster_path;
+    }
+    /**
+     * @func getSmallImgUrl
+     * @description 작은 이미지 url 주소를 반환.
+     */
+    var getSmallImgUrl = function(poster_path) {
+      return small_img_url + poster_path;
+    }
+    
     /**
      * @func loadMovies
      * @description 영화를 불러오는 함수.
@@ -187,9 +235,8 @@
       $.ajax({
         url: search_url,
         success: function(response) {
-          if(response.status === 'ok') {
-            search_data = response.data.movies;
-          } 
+          search_data = response.results;
+          console.log(search_data);
         }
       })
     }
@@ -220,7 +267,11 @@
       getCallCount: getCallCount,
       loadSearchData: loadSearchData,
       getSearchData: getSearchData,
-      getSearchUrl: getSearchUrl
+      getSearchUrl: getSearchUrl,
+      getGenre: getGenre,
+      getLargeImgUrl: getLargeImgUrl,
+      getSmallImgUrl: getSmallImgUrl
+
       // inputEvent: inputEvent
     };
   };
@@ -228,4 +279,3 @@
   global.Movie = Movie();
 
 }(window, window.jQuery));
-
