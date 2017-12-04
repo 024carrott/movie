@@ -14,7 +14,7 @@
   
   function Movie() {
     // 불러올 페이지 넘버
-    var page = 1;
+    var pages = 1;
     // 이전 페이지 넘버
     var prev_page = 0;
     // 여러번 불러오지 않도록 flag를 사용
@@ -25,24 +25,42 @@
     var movie_data = [];
     // 공통적인 url 부분
     // https://cors-anywhere.herokuapp.com/
-    var url = 'https://yts.ag/api/v2/list_movies.json?limit=12&page=';
+    var URL = 'https://api.themoviedb.org/3/movie',
+        API = 'api_key=13b38a28972a041bf8f58fe46dbc7ff6',
+        LANGUAGE = '&language=ko',
+        PAGE = '&page=';
     // var url = 'https://api.themoviedb.org/3/movie/550?api_key=7d02aff4818ac79c96864bd3293f9fbd';
     // 사용할 url 정보들
     var URLs = {
-      top_rated: '&sort_by=rating&order_by=desc',
-      new_arrivals: '&sort_by=year&order_by=asc',
-      horror: '&genre=horror',
-      animation: '&genre=animation',
-      drama: '&genre=drama',
-      thriller: '&genre=thriller',
-      comedy: '&genre=comedy',
-      mistery: '&genre=mistery',
-      adventure: '&genre=adventure',
-      fantasy: '&genre=fantasy',
-      action: '&genre=action'
-
+      trending: '/popular?',
+      top_rated: '/top_rated?',
+      now_playing: '/now_playing?',
     };
-
+    // genres
+    var genres =  {
+      "28": "액션",
+      "12": "모험",
+      "16": "애니메이션",
+      "35": "코미디",
+      "80": "범죄",
+      "99": "다큐멘터리",
+      "18": "드라마",
+      "10751": "가족",
+      "14": "판타지",
+      "36": "역사",
+      "27": "공포",
+      "10402": "음악",
+      "9648": "미스터리",
+      "10749": "로맨스",
+      "878": "SF",
+      "10770": "TV 영화",
+      "53": "스릴러",
+      "10752": "전쟁",
+      "37": "서부"
+    };
+    // img url
+    var large_img_url = 'https://image.tmdb.org/t/p/w500',
+        small_img_url = 'https://image.tmdb.org/t/p/w342';
     // 검색 url
     var search_url = 'https://yts.ag/api/v2/list_movies.json?query_term=';
     // search data 를 담을 배열 변수
@@ -53,13 +71,13 @@
    
     
 
-  
+    
     /**
      * @func getPage
      * @description page의 값을 반환하는 함수.
      */
     var getPage = function() {
-      return page;
+      return pages;
     }
     /**
      * @func getPrevPage
@@ -76,6 +94,28 @@
       return call_count;
     }
     /**
+     * @func getGenre
+     * @description 장르를 반환하는 함수.
+     */
+    var getGenre = function(id) {
+      id = id + '';
+      return genres[id];
+    }
+    /**
+     * @func getLargeImgUrl
+     * @description 큰 이미지 url 주소를 반환.
+     */
+    var getLargeImgUrl = function(poster_path) {
+      return large_img_url + poster_path;
+    }
+    /**
+     * @func getSmallImgUrl
+     * @description 작은 이미지 url 주소를 반환.
+     */
+    var getSmallImgUrl = function(poster_path) {
+      return small_img_url + poster_path;
+    }
+    /**
      * @func getMovieData
      * @description movie_data를 반환하는 함수.
      */
@@ -88,7 +128,7 @@
      */
     var resetMovieData = function() {
       movie_data = [];
-      page = 1;
+      pages = 1;
       call_count = 0;
     }
     /**
@@ -102,9 +142,9 @@
       // }
 
       load_flag = true;
-      prev_page = page;
+      prev_page = pages;
       
-      console.log('movie page: ', page);
+      console.log('movie page: ', pages);
       console.log('url: ', url);
       $.ajax({
         url: url,
@@ -114,17 +154,17 @@
         // dataType: 'application/json',
         success: function(response) {
           // console.log(response.data.movies);
-          if(response.status === 'ok') {
-            movie_data = movie_data.concat(response.data.movies);
-            page++;
-            call_count++;
-            // load_flag = false;
-            // console.log('page: ', page);
-            
-          } else {
-            
-            console.log('loading...');
-          }
+          console.log(response);
+          console.log('들어가지?');
+          movie_data = movie_data.concat(response.results);
+          console.log('movie_data: ', movie_data);
+          pages++;
+          call_count++;
+          // load_flag = false;
+          // console.log('page: ', page);
+          
+          
+          console.log('loading...');
         }
       });
     }
@@ -136,16 +176,17 @@
       
       genre = genre || '';
 
-      var new_url = url + page;
+      var new_url = URL;
 
       switch(type) {
         case 'trending':
           // new_url += '/genre/movie/list';
+          new_url += URLs[type];
         break;
         case 'top_rated':
           new_url += URLs[type];
         break;
-        case 'new_arrivals':
+        case 'now_playing':
           new_url += URLs[type];
         break;
         case 'horror':
@@ -173,7 +214,9 @@
           new_url += URLs[type];
         break;
       }
+      new_url += (API + LANGUAGE + PAGE + pages);
 
+      console.log(new_url);
       loadMovies(new_url);
     }
 
@@ -217,6 +260,9 @@
       resetMovieData: resetMovieData,
       getPage: getPage,
       getPrevPage: getPrevPage,
+      getGenre: getGenre,
+      getLargeImgUrl: getLargeImgUrl,
+      getSmallImgUrl: getSmallImgUrl,
       getCallCount: getCallCount,
       loadSearchData: loadSearchData,
       getSearchData: getSearchData,

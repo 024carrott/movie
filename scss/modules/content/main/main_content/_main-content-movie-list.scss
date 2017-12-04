@@ -18,6 +18,7 @@
   }
   .list-img-box {
     position: relative;
+    overflow: hidden;
     img {
       width: 100%;
       height: auto;
@@ -68,6 +69,12 @@
 .section-movie-list {
   &.module {
     .list-img-box {
+      height: 460px;
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
       .year {
         position: absolute;
         left: 10px;

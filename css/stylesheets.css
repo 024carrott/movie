@@ -520,6 +520,7 @@ main {
 
 .section-movie-list .list-img-box {
   position: relative;
+  overflow: hidden;
 }
 
 .section-movie-list .list-img-box img {
@@ -579,6 +580,16 @@ main {
 
 .section-movie-list .movie-list-loading .fa {
   font-size: 45px;
+}
+
+.section-movie-list.module .list-img-box {
+  height: 460px;
+}
+
+.section-movie-list.module .list-img-box img {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .section-movie-list.module .list-img-box .year {

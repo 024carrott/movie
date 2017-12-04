@@ -59,20 +59,6 @@
     var sub_category = target.parentNode.querySelector('.sub-category');
     var category_class_name = target.getAttribute('data-category');
 
-    if( category_class_name === 'genre' && sub_category ) {
-
-      var class_name = sub_category.getAttribute('class');
-
-      if( /active/.test(class_name) ) {
-        class_name = class_name.replace('active', '').trim();
-      } else {
-        class_name = 'sub-category active';
-      }
-      sub_category.setAttribute('class', class_name);
-
-      return;
-    }
-
     if( target.getAttribute('class') === 'category_btn' && category !== category_class_name ) {
       if(render_flag) {
         console.log('로딩중입니다.');
@@ -161,10 +147,10 @@
 
       console.log('movies: ', movies.length);
 
-      if( page === prev_page ) {
-        alert('데이터를 불러 올 수 없습니다.');
-        return;
-      }
+      // if( page === prev_page ) {
+      //   alert('데이터를 불러 올 수 없습니다.');
+      //   return;
+      // }
       // console.log('movie_list movies: ', movies);
       for(var i = limit * call_count, len = movies.length; i < len; i++) {
         var movie = movies[i];
@@ -173,7 +159,7 @@
 
       // target의 parent의 높이를 설정
       // target.parentNode.style.height = global.getComputedStyle(target).height;
-    }, 4000);
+    }, 2500);
   }
   /**
    * @func render
@@ -221,24 +207,25 @@
     
     // setData
     
-    year.innerText = data.year;
+    year.innerText = data.release_date;
     h4.innerText = data.title;
-    rating.innerText = (data.rating / 2).toFixed(1);
+    rating.innerText = (data.vote_average / 2).toFixed(1);
     
     var genres = '';
 
-    if ( data.genres ) {
-      for(var i = 0, len = data.genres.length; i < len; i++) {
-        genres += data.genres[i] + ' ';
+    if ( data.genre_ids.length !== 0 ) {
+      for(var i = 0, len = data.genre_ids.length; i < len; i++) {
+        var genre_id = data.genre_ids[i];
+        genres += Movie.getGenre(genre_id) + ' ';
       }
     } else {
-      genres = 'Nothing';
+      genres = '없음';
     }
-    p.innerText = genres;
+    p.innerText = genres; 
 
-    img.setAttribute('src', data.medium_cover_image);
+    img.setAttribute('src', Movie.getSmallImgUrl(data.poster_path));
     img.setAttribute('alt', 
-        '제목 ' + data.title + ' 개봉연도 ' + data.year + ' 장르 ' + genres + ' 평점 ' + (data.rating / 2).toFixed(1));
+        '제목 ' + data.title + ' 장르 ' + genres + ' 평점 ' + (data.rating / 2).toFixed(1));
     // append Elements
 
     movie_info_wrapper1.appendChild(h4);
