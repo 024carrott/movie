@@ -36,7 +36,11 @@
       top_rated: '/top_rated?',
       now_playing: '/now_playing?',
     };
+<<<<<<< HEAD
     // genres
+=======
+
+>>>>>>> e47e7d39e7e0c8d6ba59a5dbb59be15ba404e0ac
     var genres =  {
       "28": "액션",
       "12": "모험",
@@ -60,9 +64,14 @@
     };
     // img url
     var large_img_url = 'https://image.tmdb.org/t/p/w500',
+<<<<<<< HEAD
         small_img_url = 'https://image.tmdb.org/t/p/w342';
+=======
+    small_img_url = 'https://image.tmdb.org/t/p/w342';
+
+>>>>>>> e47e7d39e7e0c8d6ba59a5dbb59be15ba404e0ac
     // 검색 url
-    var search_url = 'https://yts.ag/api/v2/list_movies.json?query_term=';
+    var search_url = 'https://api.themoviedb.org/3/search/movie?api_key=13b38a28972a041bf8f58fe46dbc7ff6&language=ko&page=1&include_adult=false&query=';
     // search data 를 담을 배열 변수
     var search_data = [];
     // var url_result = '';
@@ -130,7 +139,30 @@
       movie_data = [];
       pages = 1;
       call_count = 0;
+    };
+    /**
+     * @func getGenre
+     * @description 장르를 반환하는 함수.
+     */
+    var getGenre = function(id) {
+      id = id + '';
+      return genres[id];
     }
+    /**
+     * @func getLargeImgUrl
+     * @description 큰 이미지 url 주소를 반환.
+     */
+    var getLargeImgUrl = function(poster_path) {
+      return large_img_url + poster_path;
+    }
+    /**
+     * @func getSmallImgUrl
+     * @description 작은 이미지 url 주소를 반환.
+     */
+    var getSmallImgUrl = function(poster_path) {
+      return small_img_url + poster_path;
+    }
+    
     /**
      * @func loadMovies
      * @description 영화를 불러오는 함수.
@@ -230,9 +262,8 @@
       $.ajax({
         url: search_url,
         success: function(response) {
-          if(response.status === 'ok') {
-            search_data = response.data.movies;
-          } 
+          search_data = response.results;
+          console.log(search_data);
         }
       })
     }
@@ -266,7 +297,11 @@
       getCallCount: getCallCount,
       loadSearchData: loadSearchData,
       getSearchData: getSearchData,
-      getSearchUrl: getSearchUrl
+      getSearchUrl: getSearchUrl,
+      getGenre: getGenre,
+      getLargeImgUrl: getLargeImgUrl,
+      getSmallImgUrl: getSmallImgUrl
+
       // inputEvent: inputEvent
     };
   };
@@ -274,4 +309,3 @@
   global.Movie = Movie();
 
 }(window, window.jQuery));
-
