@@ -36,11 +36,6 @@
       top_rated: '/top_rated?',
       now_playing: '/now_playing?',
     };
-<<<<<<< HEAD
-    // genres
-=======
-
->>>>>>> e47e7d39e7e0c8d6ba59a5dbb59be15ba404e0ac
     var genres =  {
       "28": "액션",
       "12": "모험",
@@ -64,12 +59,7 @@
     };
     // img url
     var large_img_url = 'https://image.tmdb.org/t/p/w500',
-<<<<<<< HEAD
         small_img_url = 'https://image.tmdb.org/t/p/w342';
-=======
-    small_img_url = 'https://image.tmdb.org/t/p/w342';
-
->>>>>>> e47e7d39e7e0c8d6ba59a5dbb59be15ba404e0ac
     // 검색 url
     var search_url = 'https://api.themoviedb.org/3/search/movie?api_key=13b38a28972a041bf8f58fe46dbc7ff6&language=ko&page=1&include_adult=false&query=';
     // search data 를 담을 배열 변수
