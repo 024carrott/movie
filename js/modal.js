@@ -5,12 +5,8 @@
   var modal_container = document.querySelector('.modal-container');
   // modal_contents = document.querySelector('.modal-contents');
 
-  // var img_url = Movie.getSmallImgUrl(poster_path);
-  var large_img_url = 'https://image.tmdb.org/t/p/w500',
-  small_img_url = 'https://image.tmdb.org/t/p/w342';
-
- 
-
+  // var large_img_url = 'https://image.tmdb.org/t/p/w500',
+  // small_img_url = 'https://image.tmdb.org/t/p/w342';
   
   // createElements
   var modal_contents = document.createElement('figcaption'),
@@ -35,16 +31,18 @@
     
     console.log('genre:', genre)
     for(var i = 0; i < genre.length; i++) {
-      // genre = genre[i];
-      
       movie_genre = Movie.getGenre(genre[i])
       console.log('movie_genre:', movie_genre);
     }
-    // var movie_genre = Movie.getGenre();
-    
+   
+    // poster-img url
+    var small_img_url = Movie.getSmallImgUrl(data.poster_path);
+    console.log('poster_url:', small_img_url);
+
+
     // setAttribute
     modal_contents.setAttribute('class', 'modal-contents');
-    modal_img.setAttribute('src', small_img_url + data.poster_path);
+    modal_img.setAttribute('src', small_img_url);
     modal_img.setAttribute('class', 'modal-poster');
     modal_h4.setAttribute('class', 'modal-title');
     // modal_year.setAttribute('class', 'modal-year');
