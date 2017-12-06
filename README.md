@@ -12,7 +12,7 @@
 ## 유지보수
 > 2017-11-10 ~
 
-## [영화 API 주소](http://yts.ag/api)
+## [영화 API 주소](https://developers.themoviedb.org/3)
 
 ## 사용 기술
 1. HTML
