@@ -288,10 +288,6 @@
       loadSearchData: loadSearchData,
       getSearchData: getSearchData,
       getSearchUrl: getSearchUrl,
-      getGenre: getGenre,
-      getLargeImgUrl: getLargeImgUrl,
-      getSmallImgUrl: getSmallImgUrl
-
       // inputEvent: inputEvent
     };
   };
