@@ -18,8 +18,9 @@
     loading = document.querySelector('.movie-list-loading');
     movie_category = document.querySelector('.movie-category');
     prev_actived_category = document.querySelectorAll('.category_btn')[0];
-    Movie.setMovieData(category);
-    setRenderList();
+    startLoading();
+    Movie.setMovieData(category, setRenderList);
+    // setRenderList();
     bind();
   }
   /**
@@ -41,9 +42,9 @@
           console.log('로딩중입니다.');
           return;
         }
-
-        Movie.setMovieData(category);
-        setRenderList();
+        startLoading();
+        Movie.setMovieData(category, setRenderList);
+        // setRenderList();
       }
     });
 
@@ -59,14 +60,14 @@
     var sub_category = target.parentNode.querySelector('.sub-category');
     var category_class_name = target.getAttribute('data-category');
 
+    console.log('category clicked');
     if( target.getAttribute('class') === 'category_btn' && category !== category_class_name ) {
+      console.log('조건 안에 들어옴');
       if(render_flag) {
         console.log('로딩중입니다.');
         return;
       }
-      if( category_class_name === 'genre' ) {
-        return;
-      } 
+      console.log('조건 안 render_flag');
       
       var add_active_class = '';
 
@@ -74,7 +75,8 @@
       Movie.resetMovieData();
 
       category = category_class_name;
-      Movie.setMovieData(category);
+      startLoading();
+      Movie.setMovieData(category, setRenderList);
       
       if(prev_actived_category) {
         var _class_name = prev_actived_category.getAttribute('class');
@@ -89,7 +91,7 @@
       target.setAttribute('class', add_active_class);
 
       prev_actived_category = target;
-      setRenderList();
+      // setRenderList();
     }
 
   }
@@ -130,36 +132,54 @@
    * @func setRenderList
    * @description Movie에서 영화정보를 받은 다음 DOM객체를 생성시켜 rendering 시켜주는 함수.
    */
-  function setRenderList() {
+  function setRenderList(movies, call_count) {
 
     render_flag = true;
-    startLoading();
 
-    global.setTimeout(function() {
-      var movies = Movie.getMovieData();
-      var call_count = Movie.getCallCount() - 1;
-      var page = Movie.getPage();
-      var prev_page = Movie.getPrevPage();
-      var limit = 12;
+    var movies = Movie.getMovieData();
+    var call_count = Movie.getCallCount() - 1;
+    var limit = 20;
 
-      render_flag = false;
-      stopLoading();
-
-      console.log('movies: ', movies.length);
-
-      // if( page === prev_page ) {
+    render_flag = false;
+    
+    console.log('movies: ', movies.length);
+    
+    // if( page === prev_page ) {
       //   alert('데이터를 불러 올 수 없습니다.');
-      //   return;
-      // }
-      // console.log('movie_list movies: ', movies);
-      for(var i = limit * call_count, len = movies.length; i < len; i++) {
-        var movie = movies[i];
-        render(movie, i);
-      }
+    //   return;
+    // }
+    // console.log('movie_list movies: ', movies);
+    for(var i = limit * call_count, len = movies.length; i < len; i++) {
+      var movie = movies[i];
+      render(movie, i);
+    }
+    
+    stopLoading();
+    // global.setTimeout(function() {
+      //   var movies = Movie.getMovieData();
+    //   var call_count = Movie.getCallCount() - 1;
+    //   var page = Movie.getPage();
+    //   var prev_page = Movie.getPrevPage();
+    //   var limit = 12;
 
-      // target의 parent의 높이를 설정
-      // target.parentNode.style.height = global.getComputedStyle(target).height;
-    }, 2500);
+    //   render_flag = false;
+    //   stopLoading();
+
+    //   console.log('movies: ', movies.length);
+
+    //   // if( page === prev_page ) {
+    //   //   alert('데이터를 불러 올 수 없습니다.');
+    //   //   return;
+    //   // }
+    //   // console.log('movie_list movies: ', movies);
+    //   for(var i = limit * call_count, len = movies.length; i < len; i++) {
+    //     var movie = movies[i];
+    //     render(movie, i);
+    //   }
+
+    //   // target의 parent의 높이를 설정
+    //   // target.parentNode.style.height = global.getComputedStyle(target).height;
+    // }, 2500);
   }
   /**
    * @func render
