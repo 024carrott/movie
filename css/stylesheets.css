@@ -194,6 +194,7 @@ header .search-list {
 header .search-item {
   display: block;
   padding: 10px;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 769px) {
@@ -755,6 +756,7 @@ main {
   border: none;
   background-color: #181818;
   color: #fff;
+  cursor: pointer;
 }
 
 .modal-contents span {
