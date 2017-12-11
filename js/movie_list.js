@@ -136,50 +136,14 @@
 
     render_flag = true;
 
-    var movies = Movie.getMovieData();
-    var call_count = Movie.getCallCount() - 1;
     var limit = 20;
-
     render_flag = false;
-    
-    console.log('movies: ', movies.length);
-    
-    // if( page === prev_page ) {
-      //   alert('데이터를 불러 올 수 없습니다.');
-    //   return;
-    // }
-    // console.log('movie_list movies: ', movies);
     for(var i = limit * call_count, len = movies.length; i < len; i++) {
       var movie = movies[i];
       render(movie, i);
     }
     
     stopLoading();
-    // global.setTimeout(function() {
-      //   var movies = Movie.getMovieData();
-    //   var call_count = Movie.getCallCount() - 1;
-    //   var page = Movie.getPage();
-    //   var prev_page = Movie.getPrevPage();
-    //   var limit = 12;
-
-    //   render_flag = false;
-    //   stopLoading();
-
-    //   console.log('movies: ', movies.length);
-
-    //   // if( page === prev_page ) {
-    //   //   alert('데이터를 불러 올 수 없습니다.');
-    //   //   return;
-    //   // }
-    //   // console.log('movie_list movies: ', movies);
-    //   for(var i = limit * call_count, len = movies.length; i < len; i++) {
-    //     var movie = movies[i];
-    //     render(movie, i);
-    //   }
-
-    //   // target의 parent의 높이를 설정
-    //   // target.parentNode.style.height = global.getComputedStyle(target).height;
-    // }, 2500);
   }
   /**
    * @func render

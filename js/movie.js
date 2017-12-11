@@ -165,9 +165,7 @@
 
       prev_page = pages;
       load_flag = true;
-      console.log('movie page: ', pages);
-      console.log('url: ', url);
-      console.log('callback', callback);
+
       $.ajax({
         url: url,
         type: 'GET',
@@ -176,10 +174,10 @@
         // dataType: 'application/json',
         success: function(response) {
           movie_data = movie_data.concat(response.results);
-          console.log('movie_data: ', movie_data);
-          pages++;
-          call_count++;
+          
           callback(movie_data, call_count);
+          call_count++
+          pages++;
           load_flag = false;
         }
       });
