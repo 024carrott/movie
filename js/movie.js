@@ -174,8 +174,10 @@
         // dataType: 'application/json',
         success: function(response) {
           movie_data = movie_data.concat(response.results);
-          
+
           callback(movie_data, call_count);
+
+          
           call_count++
           pages++;
           load_flag = false;

@@ -140,6 +140,7 @@
     render_flag = false;
     for(var i = limit * call_count, len = movies.length; i < len; i++) {
       var movie = movies[i];
+
       render(movie, i);
     }
     
