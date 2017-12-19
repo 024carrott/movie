@@ -53,7 +53,12 @@
     modal_h4.innerText = data.title;
     // modal_year.innerText = data.year;
     modal_genre.innerText = movie_genre;
-    modal_summary.innerText = data.overview;
+
+    if(data.overview === '') {
+      modal_summary.innerText = '줄거리 없음.';
+    }else {
+      modal_summary.innerText = data.overview;
+    }
     // modal_genre.
     
 
@@ -64,19 +69,21 @@
 
     
     closeModal();
+
+    
   }
   function closeModal () {
+    var modal_wrap = document.querySelector('.modal-wrap');
     var btn = document.querySelector('.modal-close-btn');
-    var modal = document.querySelector('.modal');
+    var main_inner = document.querySelector('.main-inner');
 
     btn.addEventListener('click', function(e) {
       console.log('click');
-      $(modal).addClass('none');
+      $(modal_wrap).addClass('none');
+      $(main_inner).removeClass('dim');
     })
   }
-  function removeRenderItem() {
 
-  };
 
 
 

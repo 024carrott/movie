@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch": "node-sass -w scss/ -o css/ --output-style expanded --source-map true"    
+    "watch": "node-sass -w scss/ -o css/ --output-style expanded --source-map true"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/024carrott/movie/issues"
   },
-  "homepage": "https://github.com/024carrott/movie#readme"
+  "homepage": "https://github.com/024carrott/movie#readme",
+  "dependencies": {
+    "node-sass": "^4.7.2"
+  }
 }

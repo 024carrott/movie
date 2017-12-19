@@ -242,8 +242,10 @@
 
     li.appendChild(figure);
     li.addEventListener('click', function() {
-      var modal = document.querySelector('.modal');
-      $(modal).removeClass('none');
+      var modal_wrap = document.querySelector('.modal-wrap');
+      var main_inner = document.querySelector('.main-inner');
+      $(modal_wrap).removeClass('none');
+      $(main_inner).addClass('dim');
       Modal(data);
     });
     target.appendChild(li);

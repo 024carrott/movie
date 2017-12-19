@@ -744,13 +744,13 @@ main {
   }
 }
 
-.modal {
+.modal-wrap {
   position: fixed;
   z-index: 10002;
-  background-color: #181818;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  box-shadow: 8px 8px 30px 5px #333;
   background-color: #181818;
   color: #fff;
 }
@@ -758,7 +758,7 @@ main {
 .modal-close-btn {
   float: right;
   border: none;
-  background-color: #181818;
+  background-color: transparent;
   color: #fff;
 }
 
@@ -784,6 +784,7 @@ main {
     width: 700px;
   }
   .modal-close-btn {
+    margin: 10px 20px 0 0;
     font-size: 1.4rem;
     cursor: pointer;
   }
@@ -821,6 +822,7 @@ main {
     width: 80%;
   }
   .modal-close-btn {
+    margin: 20px 20px 0 0;
     font-size: 1.4rem;
   }
   .modal-poster {
@@ -862,6 +864,7 @@ main {
   .modal-close-btn {
     position: fixed;
     right: 20px;
+    margin: 10px 0 0 0;
     font-size: 1.4rem;
   }
   .modal-poster {
@@ -895,6 +898,16 @@ main {
 
 .none {
   display: none;
+}
+
+.dim {
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  opacity: 0.6;
+  /* see below for cross-browser opacity */
 }
 
 footer {

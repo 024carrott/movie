@@ -51,6 +51,7 @@
         return;
       };
       if( e.target.getAttribute('class') === 'modal-close-btn' ) {
+        console.log('모달 닫기 버튼 클릭', e.target);
         return;
       }
       removeRenderItem();
@@ -134,7 +135,8 @@
     var li = document.createElement('li');
     var title = data.title;
     var list_data = [];
-    var modal = document.querySelector('.modal');    
+    var modal_wrap = document.querySelector('.modal-wrap');
+    var main_inner = document.querySelector('.main-inner');
     // li.setAttribute('data-index', index);
     // li.setAttribute('class','search-list-result');
     a.setAttribute('class', 'search-item');
@@ -146,7 +148,9 @@
 
       list_data = data;
       // console.log('클릭 리스트 데이터',list_data);
-      $(modal).removeClass('none')
+      $(modal_wrap).removeClass('none');
+      $(main_inner).addClass('dim');
+
       Modal(list_data);
 
     })  
