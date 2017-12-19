@@ -69,11 +69,13 @@
 .section-movie-list {
   &.module {
     .list-img-box {
-      height: 380px;
+      
       img {
-        position: absolute;
-        top: 0;
-        left: 0;
+        // position: absolute;
+        // top: 0;
+        // left: 0;
+        width: 100%;
+        height: 380px;
       }
       .year {
         position: absolute;

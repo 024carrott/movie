@@ -194,6 +194,7 @@ header .search-list {
 header .search-item {
   display: block;
   padding: 10px;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 769px) {
@@ -582,14 +583,9 @@ main {
   font-size: 45px;
 }
 
-.section-movie-list.module .list-img-box {
-  height: 380px;
-}
-
 .section-movie-list.module .list-img-box img {
-  position: absolute;
-  top: 0;
-  left: 0;
+  width: 100%;
+  height: 380px;
 }
 
 .section-movie-list.module .list-img-box .year {
@@ -760,6 +756,7 @@ main {
   border: none;
   background-color: transparent;
   color: #fff;
+  cursor: pointer;
 }
 
 .modal-contents span {

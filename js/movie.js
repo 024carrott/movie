@@ -157,17 +157,15 @@
      * @func loadMovies
      * @description 영화를 불러오는 함수.
      */
-    var loadMovies = function(url) {
-      // if( load_flag ) {
-      //   console.log('불러오는 중입니다.');
-      //   return;
-      // }
+    var loadMovies = function(url, callback) {
+      if( load_flag ) {
+        console.log('불러오는 중입니다.');
+        return;
+      }
 
-      load_flag = true;
       prev_page = pages;
-      
-      console.log('movie page: ', pages);
-      console.log('url: ', url);
+      load_flag = true;
+
       $.ajax({
         url: url,
         type: 'GET',
@@ -175,18 +173,14 @@
         // crossOrigin: true,
         // dataType: 'application/json',
         success: function(response) {
-          // console.log(response.data.movies);
-          console.log(response);
-          console.log('들어가지?');
           movie_data = movie_data.concat(response.results);
-          console.log('movie_data: ', movie_data);
+
+          callback(movie_data, call_count);
+
+          
+          call_count++
           pages++;
-          call_count++;
-          // load_flag = false;
-          // console.log('page: ', page);
-          
-          
-          console.log('loading...');
+          load_flag = false;
         }
       });
     }
@@ -194,9 +188,8 @@
      * @func setMovieData
      * @description 영화 url을 변경시키고 변경시킨 url을 가지고 laodMovies 함수를 호출시킴.
      */
-    var setMovieData = function(type, genre) {
+    var setMovieData = function(type, callback) {
       
-      genre = genre || '';
 
       var new_url = URL;
 
@@ -211,35 +204,12 @@
         case 'now_playing':
           new_url += URLs[type];
         break;
-        case 'horror':
-          new_url += URLs[type];
-          break;
-        case 'animation':
-          new_url += URLs[type];
-          break;
-        case 'drama':
-          new_url += URLs[type];
-        break;
-        case 'comedy':
-          new_url += URLs[type];
-        break;
-        case 'mistery':
-          new_url += URLs[type];
-        break;
-        case 'adventure':
-          new_url += URLs[type];
-        break;
-        case 'fantasy':
-          new_url += URLs[type];
-        break;
-        case 'action':
-          new_url += URLs[type];
-        break;
       }
       new_url += (API + LANGUAGE + PAGE + pages);
 
+      // console.log('setMoviedata callback: ', callback);
       console.log(new_url);
-      loadMovies(new_url);
+      loadMovies(new_url, callback);
     }
 
     //  검색
@@ -288,10 +258,6 @@
       loadSearchData: loadSearchData,
       getSearchData: getSearchData,
       getSearchUrl: getSearchUrl,
-      getGenre: getGenre,
-      getLargeImgUrl: getLargeImgUrl,
-      getSmallImgUrl: getSmallImgUrl
-
       // inputEvent: inputEvent
     };
   };
